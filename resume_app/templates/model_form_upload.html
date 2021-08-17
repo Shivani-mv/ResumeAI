@@ -1,0 +1,13 @@
+{% extends "upload_cv1.html" %}
+
+{% block content %}
+  <form method="post" enctype="multipart/form-data">
+
+    {% csrf_token %}
+
+    <button type="submit">Upload</button>
+
+  </form>
+
+ 
+{% endblock %}

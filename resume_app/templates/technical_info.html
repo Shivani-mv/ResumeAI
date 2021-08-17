@@ -1,0 +1,842 @@
+{% load static %}
+
+
+<head>
+  <link rel="stylesheet" href="{% static 'core/css/all.min.css'%}">
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@700&family=Montserrat&display=swap" rel="stylesheet">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  
+  
+  <script>
+    function myFunction() {
+      confirm("Press a button!");
+    }
+    </script>
+    
+
+<style type="text/css">
+
+  @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+  :root {
+  --box-height: 40px;
+  --border-radius: 5px;
+  --space-between: 20px;
+  --font-size: 16px;
+
+  --color-0: #ffffff;
+  --color-1: #dcdcdd;
+  --color-2: #c5c3c6;
+  --color-3: #212529;
+  --color-4: #659b5e;
+  --color-5: #ce4257;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #fff; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+body{
+  overflow-x: hidden;
+  background-color: #fff;
+}
+::selection{
+  color: #fff;
+  background: #a4b7d1;
+}
+.align{
+  right: 500px;
+}
+.container{
+  width: 700px;
+  height: 650px;
+  background: #fff;
+  text-align: center;
+  border-radius: 25px;
+  padding: 0px 35px 10px 35px;
+  position: relative;
+  left:400px;
+  bottom: 50px;
+
+}
+.container header{
+  font-size: 35px;
+  font-weight: 600;
+  margin: 0 0 30px 0;
+}
+.container .form-outer{
+  width: 100%;
+  overflow: hidden;
+}
+.container .form-outer form{
+  display: flex;
+  width: 400%;
+}
+.form-outer form .page{
+  width: 25%;
+  transition: margin-left 0.3s ease-in-out;
+}
+.form-outer form .page .title{
+  text-align: center;
+  font-size: 25px;
+  font-weight: 500;
+}
+.form-outer form .page .field{
+  width: 800px;
+  height: 45px;
+  margin: 45px 0;
+  
+  position: relative;
+}
+.form-outer form .page .field1{
+  width: 330px;
+  height: 45px;
+  margin: 45px 0;
+  display: flex;
+  position: relative;
+}
+form .page .field .label{
+  position: absolute;
+  top: 10px;
+  font-weight: 500;
+  font-size: 20px; 
+}
+form .page .field1 .label{
+  position: absolute;
+  top: -30px;
+  font-weight: 500;
+}
+form .page .field input{
+  height: 100%;
+  width: 500px;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding-left: 15px;
+  font-size: 18px;
+}
+form .page .field select{
+  width: 100%;
+  padding-left: 10px;
+  font-size: 17px;
+  font-weight: 500;
+}
+form .page .field button{
+  width: 100%;
+  height: calc(100% + 5px);
+  border: none;
+  background: #000;
+  margin-top: -20px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+}
+form .page .field button:hover{
+  background: #000;
+}
+.btn-next{
+  width: 15%;
+  border: none;
+  background: #000;
+  margin-top: 0;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+  position: relative;
+  left: 240px;
+  top: 120px;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-decoration: none;
+  float: left;
+}
+.btn-next:hover{
+  background: gray;
+}
+
+.btn-next1{
+  width: 15%;
+  border: none;
+  background: #000;
+  margin-top: 0;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+  position: relative;
+  left: 420px;
+  top: 120px;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-decoration: none;
+  float: left;
+
+}
+.btn-next1:hover{
+  background: gray;
+}
+
+.form-outer form .page .field2{
+  width: 600px;
+  height: 45px;
+  margin: 45px 0;
+  position: relative;
+}
+
+form .page .field2 .label{
+
+  position: absolute;
+  top: 10px;
+  font-weight: 500;
+  font-size: 20px;
+  
+}
+form .page .field2 input{
+
+  height: 100%;
+  width: 415px;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding-left: 15px;
+  font-size: 18px;
+  float: right;
+  position: relative;
+  left: 55px;
+}
+form .page .field2 select{
+  width: 100%;
+  padding-left: 10px;
+  font-size: 17px;
+  font-weight: 500;
+}
+form .page .field2 button{
+  width: 100%;
+  height: calc(100% + 5px);
+  border: none;
+  background: #a4b7d1;
+  margin-top: -20px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+}
+form .page .field2 button:hover{
+  background: #000;
+}
+form .page .field1 input{
+  height: 100%;
+  width: 500px;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding-left: 15px;
+  font-size: 18px;
+  position: relative;
+}
+form .page .field1 select{
+  width: 100%;
+  padding-left: 10px;
+  font-size: 17px;
+  font-weight: 500;
+}
+form .page .field1 button{
+  width: 100%;
+  height: calc(100% + 5px);
+  border: none;
+  background: #a4b7d1;
+  margin-top: -20px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+  position: relative;
+  right: -200px;
+}
+form .page .field1 button:hover{
+  background: #000;
+}
+form .page .btns button{
+  margin-top: -20px!important;
+}
+form .page .btns button.prev{
+  margin-right: 3px;
+  font-size: 17px;
+}
+form .page .btns button.next{
+  margin-left: 3px;
+}
+.dropdown1{
+  position: relative;
+  left: 120px;
+  height: 100%;
+  width: 530px;
+  border-radius: 50px;
+  padding-left: 15px;
+  font-size: 18px;
+  display: flex;
+
+}
+select{
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  color: #a4b7d1;
+}
+
+.dropdown2{
+  position: relative;
+  left: 130px;
+  height: 100%;
+  width: 70px;
+  border-radius: 50px;
+  padding-left: 15px;
+  font-size: 18px;
+  display:inline-flex;
+  float: left;
+
+}
+.dropdown3{
+  position: relative;
+  left: 190px;
+  height: 100%;
+  width: 465px;
+  border-radius: 50px;
+  padding-left: 15px;
+  font-size: 18px;
+  display:inline-flex;
+  float: left;
+
+}
+.required {
+  color: red;
+}
+header {
+  background-color: #000;
+  height: 120px;
+  position: relative;
+  bottom: 8px;
+  left:-10px;
+  width: 100000px;
+}
+
+.footer {
+  background-color: #000;
+  width: 1550px;
+  text-align: left;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 50px;
+  margin-top: 50px;
+  position: relative;
+  right: 320px;
+  top:200px;
+  height: 250px;
+}
+
+.footer .footer-left,
+.footer .footer-center,
+.footer .footer-right {
+  display: inline-block;
+  vertical-align: top;
+}
+/* footer left*/
+.footer .footer-left {
+  width: 33%;
+  padding-right: 15px;
+}
+
+.footer .about {
+  line-height: 20px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.footer .about span {
+  display: block;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.footer .icons {
+  margin-top: 25px;
+  position: relative;
+  left: 100px;
+}
+
+.footer .icons a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  background-color: #33383b;
+  border-radius: 2px;
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 35px;
+  margin-right: 3px;
+  margin-bottom: 5px;
+}
+
+
+/* footer center*/
+
+.footer .footer-center {
+  width: 30%;
+}
+
+.footer .footer-center i {
+  background-color: #33383b;
+  color: #ffffff;
+  font-size: 25px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 42px;
+  margin: 10px 15px;
+  vertical-align: middle;
+}
+
+.footer .footer-center i.fa-envelope {
+  font-size: 17px;
+  line-height: 38px;
+}
+
+.footer .footer-center p {
+  display: inline-block;
+  color: #ffffff;
+  vertical-align: middle;
+  margin: 0;
+}
+
+.footer .footer-center p span {
+  display: block;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 2;
+}
+
+.footer .footer-center p a {
+  color: #0099ff;
+  text-decoration: none;
+}
+
+
+/* footer right*/
+
+.footer .footer-right {
+  width: 35%;
+}
+
+.footer h2 {
+  color: #ffffff;
+  font-size: 36px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.footer h2 span {
+  color: #0099ff;
+}
+
+.footer .menu {
+  color: #ffffff;
+  margin: 20px 0 12px;
+  padding: 0;
+}
+
+.footer .menu a {
+  display: inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer .menu a:hover {
+  color: gray;
+}
+
+.footer .name {
+  color: gray;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+}
+
+@media (max-width: 767px) {
+  .footer {
+    font-size: 14px;
+  }
+  .footer .footer-left,
+  .footer .footer-center,
+  .footer .footer-right {
+    display: block;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  .footer .footer-center i {
+    margin-left: 0;
+  }
+}
+.footer-img {
+  height: 240px;
+    width: 250px;
+    position: relative;
+    bottom: 20px;
+    left: 50px;
+}
+.icons a:hover  {
+  background-color: #808080;
+  transform: scale(1.2);
+  transition: all 0.3s ease;
+}
+
+.card {
+    cursor: pointer;
+    margin: 50px;
+    border-radius: 3px;
+    perspective: 1000px;
+    position: relative;
+    left: 0px;
+    bottom: 150px;
+    
+  
+  
+}
+
+.card__inner {
+    background-color: #f6f4f1;
+    color: #000000;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    border-radius: 50px;
+    height: 400px;
+    width: 350px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.card:hover .card__inner {
+    transform: rotateY(180deg);
+}
+
+.card__content {
+    position: absolute;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+
+.card__content--back {
+  transform: rotateY(180deg);
+} 
+
+/*----------------------------*/
+.card1 {
+    cursor: pointer;
+    margin: 50px;
+    border-radius: 3px;
+    perspective: 1000px;
+    position: relative;
+    left: 400px;
+    bottom: 600px;
+}
+
+.card__inner1 {
+    background-color: #f6f4f1;
+    color: #000000;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    height: 400px;
+    width: 350px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.card1:hover .card__inner1 {
+    transform: rotateY(180deg);
+}
+
+.card__content1 {
+    position: absolute;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+
+.card__content--back1 {
+  transform: rotateY(180deg);
+} 
+#subscribe-footer i.icon-chevron-right{
+  color:#2980B9;
+  font-size:97px;
+  z-index:-999;
+}
+#subscribe-footer form {
+    float: right;
+    margin: 28px;
+}
+#subscribe-footer form .inptfld {
+    font-family: Open Sans;
+    outline: medium none;
+    border: medium none;
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 3px;
+    width: 250px;
+    position:relative;
+    right: 70px;
+}
+#subscribe-footer form .subscribebtn {
+outline: none;
+border: none;
+padding: 10px;
+border-radius: 3px;
+color: #fff;
+background: #1a1a1a;
+cursor: pointer;
+margin-left: 10px;
+position: relative;
+right: 70px;
+}
+#subscribe-footer form .subscribebtn:hover {
+background: gray;
+-webkit-transition: all .6s ease 0;
+-moz-transition: all .6s ease;
+-ms-transition: all .6s ease 0;
+-o-transition: all .6s ease 0;
+transition: all .6s ease 0;
+}
+#box {
+  width: 750px;
+  height: 2000px;
+  background-color: #fcfcfc;
+  box-shadow: 5px 5px 15px 5px #aaa;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  padding-bottom: 0px;
+  border-radius: 15px;
+  position: relative;
+  left: 380px;
+  top: 70px;
+}
+
+</style>
+</head>
+<body>
+
+
+  
+  <header>
+    <p style="position:relative;right:-480px;top:30px;color: white;font-size: 40px;">CMR INSTITUTE OF TECHNOLOGY</p>
+    <img src="{% static 'img/cmrit-white.png' %}" style="width:180px;height:180px;position:relative;bottom:120px;margin-left: 20px;">
+  </header>
+
+    <div id="box" style="width: 1000px;position: relative;left: 290px;height:2100px">
+      <h1 style="position: relative;left:350px;top:40px;">TECHNICAL INFO</h1>
+      <br>
+      <h2 id="description" style="font-size: 20px;text-align: center;">Please check the necessary details and edit as per requirements.</h2>
+
+  <form action="" enctype="multipart/form-data" method="POST">
+    <br>
+  
+
+    {% csrf_token %}
+    <label for="id_perc_10" style="color:#000;font-size:20px;font-weight:500;position: relative;top:50px;left:80px;font-family: 'Poppins', sans-serif;">10th Percentage/CGPA :</label>
+        {{ form.perc_10 }}
+
+
+    <label for="id_year_10" style="color:#000;font-size:20px;font-weight:500;position: relative;top:120px;left:-540px;font-family: 'Poppins', sans-serif;">Passing Year Of 10th :</label>
+      {{ form.year_10 }}   
+
+    <label for="id_perc_12" style="color:#000;font-size:20px;font-weight:500;position: relative;top:140px;left:-320px;font-family: 'Poppins', sans-serif;">12th Percentage/CGPA :</label>
+      {{ form.perc_12 }}  
+      
+    <label for="id_year_10" style="color:#000;font-size:20px;font-weight:500;position: relative;top:140px;left:-295px;font-family: 'Poppins', sans-serif;">Passing Year Of 12th :</label>
+      {{ form.year_12 }}   
+
+    <label for="id_ug_degree" style="color:#000;font-size:20px;font-weight:500;position: relative;top:140px;left:-200px;font-family: 'Poppins', sans-serif;">UG Degree :</label>
+      {{ form.ug_degree }}  
+      
+      <label for="id_ug_uni" style="color:#000;font-size:20px;font-weight:500;position:absolute;top:580px;left:105px;font-family: 'Poppins', sans-serif;">Name Of UG University :</label>
+      {{ form.ug_uni }}   
+
+      <label for="id_perc_10" style="color:#000;font-size:20px;font-weight:500;position: relative;top:210px;left:-265px;font-family: 'Poppins', sans-serif;">UG Specialization :</label>
+      {{ form.ug_spec }}   
+
+      <label for="id_perc_10" style="color:#000;font-size:20px;font-weight:500;position: relative;top:215px;left:97px;font-family: 'Poppins', sans-serif;">UG Percentage/CGPA :</label>
+      {{ form.perc_ug }}
+      
+      <label for="id_perc_10" style="color:#000;font-size:20px;font-weight:500;position: relative;top:280px;left:-527px;font-family: 'Poppins', sans-serif;">UG Completion Year :</label>
+      {{ form.year_ug }}
+      
+      <label for="id_perc_10" style="color:#000;font-size:20px;font-weight:500;position: relative;top:285px;left:-197px;font-family: 'Poppins', sans-serif;">PG Degree :</label>
+      {{ form.pg_degree }} 
+      
+      <label for="id_perc_10" style="color:#000;font-size:20px;font-weight:500;position: absolute;top:925px;left:110px;font-family: 'Poppins', sans-serif;">Name Of PG University :</label>
+      {{ form.pg_uni }}
+      
+      <label for="id_perc_10" style="color:#000;font-size:20px;font-weight:500;position: relative;top:360px;left:-265px;font-family: 'Poppins', sans-serif;">PG Specialization :</label>
+      {{ form.pg_spec }}
+      
+      <label for="id_perc_10" style="color:#000;font-size:20px;font-weight:500;position: relative;top:370px;left:96px;font-family: 'Poppins', sans-serif;">PG Percentage/CGPA  :</label>
+      {{ form.pg_perc }}   
+
+      <label for="id_perc_10" style="color:#000;font-size:20px;font-weight:500;position: relative;top:440px;left:-525px;font-family: 'Poppins', sans-serif;">PG Completion Year :</label>
+      {{ form.year_pg }}
+      
+      <label for="id_perc_10" style="color:#000;font-size:20px;font-weight:500;position: relative;top:445px;left:-327px;font-family: 'Poppins', sans-serif;">Name Of PHD University :</label>
+      {{ form.phd_uni }}
+      
+      <label for="id_perc_10" style="color:#000;font-size:20px;font-weight:500;position: relative;top:450px;left:-307px;font-family: 'Poppins', sans-serif;">PHD Completion Year :</label>
+      {{ form.year_phd }}   
+
+      <label for="id_perc_10" style="color:#000;font-size:20px;font-weight:500;position: relative;top:455px;left:-278px;font-family: 'Poppins', sans-serif;">PHD Specialization :</label>
+      {{ form.phd_spec }}   
+
+      <label for="id_perc_10" style="color:#000;font-size:20px;font-weight:500;position: relative;top:460px;left:-203px;font-family: 'Poppins', sans-serif;">PHD Status :</label>
+      {{ form.status }}   
+
+      
+      
+      <label for="id_perc_10" style="color:#000;font-size:20px;font-weight:500;position: relative;top:540px;left:48px;font-family: 'Poppins', sans-serif;">Teaching Work Experience :</label>
+      {{ form.teach_work_exp }} 
+
+      <label for="id_perc_10" style="color:#000;font-size:20px;font-weight:500;position:relative;top:470px;left:-593px;font-family: 'Poppins', sans-serif;">Total Work Experience :</label>
+      {{ form.tot_work_exp }}
+      
+      <label for="id_perc_10" style="color:#000;font-size:20px;font-weight:500;position: relative;top:500px;left:-180px;font-family: 'Poppins', sans-serif;">Interests :</label>
+      {{ form.interest }}
+
+      <label for="id_perc_10" style="color:#000;font-size:20px;font-weight:500;position: relative;top:650px;left:-673px;font-family: 'Poppins', sans-serif;">Skill Set :</label>
+      {{ form.skill_set }}
+
+      
+      
+      {% load static %}
+
+
+<head>
+  <link rel="stylesheet" href="{% static 'core/css/all.min.css'%}">
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@700&family=Montserrat&display=swap" rel="stylesheet">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <a href="/upload_cv" class="btn-next">Previous</a>
+  <button type="submit" class="btn-next1" onclick="myFunction()">Submit</button>
+  </form>
+
+ <footer class="footer">
+    <div class="footer-left col-md-4 col-sm-6">
+   
+      <h3 style="color:white;position:relative;left:20px;">Subscribe for newsletter</h3>
+        <div id="subscribe-footer">
+         
+        <i class='icon-chevron-right'></i>
+        <div id="right">
+        <form action="https://feedburner.google.com/fb/a/mailverify" method="post" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=techkshetra', 'popupwindow',  'scrollbars=yes,width=550,height=520');return true" target="popupwindow">
+        <input class="inptfld" name="email" placeholder=" Your Email" type="text">
+        <input name="uri" value="techkshetra" type="hidden">
+        <input name="loc" value="en_US" type="hidden">
+        <input class="subscribebtn" value="Subscribe Now!" type="submit">
+          </form>
+        </div>
+      </div>
+      <br><br><br><br><br><br>
+  
+     
+      <div class="icons">
+        <a href="https://www.facebook.com/CMRInstituteOfTechnologyBangalore/"><i class="fab fa-facebook" style="position: relative;top:8px;"></i></a>
+        <a href="https://twitter.com/CMRIT_Bengaluru"><i class="fab fa-twitter" style="position: relative;top:8px;"></i></a>
+        <a href="https://www.linkedin.com/school/cmr-institute-of-technology-bengaluru/"><i class="fab fa-linkedin" style="position: relative;top:8px;"></i></a>
+        <a href="https://www.youtube.com/channel/UCpi96paEf16WS-Xf0_xyL9Q"><i class="fab fa-youtube" style="position: relative;top:8px;"></i></a>
+        <a href="https://www.instagram.com/cmrit.bangalore/"><i class="fab fa-instagram" style="position: relative;top:8px;"></i></a>
+      </div>
+    </div>
+    <div class="footer-center col-md-4 col-sm-6">
+      <div>
+        <i class="fas fa-map-marker-alt" style="color: white;width: 20px;height: 20px;"></i>
+              <p><span> CMR Institute of Technology,<br>132 AECS Layout,<br>ITPL Main Road, Kundalahalli<br>Bangalore 560037, India</span></p>
+      </div>
+      <br>
+      <div>
+        
+        <i class="fas fa-phone" style="color: white;"></i>
+        <p> (+91) 80 28524466 / 77</p>
+      </div>
+      <br>
+      <div>
+        <i class="fa fa-envelope"></i>
+        <p> info@cmrit.ac.in</p>
+      </div>
+    </div>
+    <div class="footer-right col-md-4 col-sm-6">
+      <img class="footer-img" src="{% static 'img/cmrit-white.png' %}">
+      <p class="menu" style="position: relative;bottom: 50px;right: 20px;">
+        <a href="#"> Home</a> 
+        <a href="#" > Admin</a> 
+        <a href="#" > Receptionist</a> 
+        <a href="#" > Apply now</a> 
+        <a href="#"  > Contact Us</a> 
+        <a href="#"> FAQ</a>
+      </p>
+      
+    </div>
+    <footer style="color:lightgrey;background-color:#1a1a1a;height:8px;width: 1550px;text-align: center; font-family: sans-serif;font-size: 16px;padding:20px;position: relative;right:50px;bottom:10px;">Copyright © 2021 All Rights Reserved by CMRIT.</footer>
+  </footer>
+<script src="{% static 'core/js/all.min.js' %}"></script>
+<script src="//cdn.jsdelivr.net/npm/less@4.1.1" ></script>
+
+
+
+</body>
+
+  

@@ -1,0 +1,19 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>URL</title>
+</head>
+<body>
+<h1>List of Videos</h1>
+<table border="1" width="600">
+<tr>
+
+<td>Resume path</td>
+</tr>
+{% for video in allvideos %}
+<tr>
+<td>{{ video.document }}</td>
+{% endfor %}
+</table>
+</body>
+</html>

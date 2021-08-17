@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Personal Info</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!--<script>
+      function ValidateEmail() {
+          var email = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+          if (document.getElementById('emailid').value == "" && document.getElementById('dob').value == "" && document.getElementById('add').value == "" && document.getElementById('gen').value == ""){
+            alert('Please enter all the details');
+          document.getElementById('emailid').style.borderColor="red";
+          return false;}
+          else if (document.getElementById('emailid').value == ""){
+            alert('Please enter your Email');
+          document.getElementById('emailid').style.borderColor="red";
+          return false;}
+          else if (document.getElementById('dob').value == ""){
+            alert('Please enter your DOB');
+          document.getElementById('dob').style.borderColor="red";
+          return false;}
+          else if (document.getElementById('gen').value == ""){
+          alert('Please select your gender');
+          document.getElementById('gen').style.borderColor="red";
+          return false;}
+          else if (document.getElementById('add').value == ""){
+            alert('Please enter your Address');
+          document.getElementById('add').style.borderColor="red";
+          return false;}
+
+          else {
+              if (document.getElementById('emailid').value.match(email))
+              {
+                  return true;
+              }
+              alert("You have entered an invalid email address!");
+              return false;
+            }
+    }
+    </script>-->
+  </head>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+    
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #a4b7d1; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background: url("bg.png"), -webkit-linear-gradient(bottom,#F0FFFF,#B0C4DE);
+}
+::selection{
+  color: #fff;
+  background: #a4b7d1;
+}
+.align{
+  right: 500px;
+}
+.container{
+  width: 700px;
+  height: 100%;
+  background: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 0px 35px 10px 35px;
+  margin: 20px;
+}
+.container header{
+  font-size: 35px;
+  font-weight: 600;
+  margin: 0 0 30px 0;
+}
+.container .form-outer{
+  width: 100%;
+  overflow: hidden;
+}
+.container .form-outer form{
+  display: flex;
+  width: 400%;
+}
+.form-outer form .page{
+  width: 25%;
+  transition: margin-left 0.3s ease-in-out;
+}
+.form-outer form .page .title{
+  text-align: center;
+  font-size: 25px;
+  font-weight: 500;
+}
+.form-outer form .page .field{
+  width: 800px;
+  height: 45px;
+  margin: 45px 0;
+  
+  position: relative;
+}
+.form-outer form .page .field1{
+  width: 330px;
+  height: 45px;
+  margin: 45px 0;
+  display: flex;
+  position: relative;
+}
+form .page .field .label{
+
+  position: absolute;
+  top: 10px;
+  font-weight: 500;
+  font-size: 20px;
+  
+}
+form .page .field1 .label{
+
+  position: absolute;
+  top: -30px;
+  font-weight: 500;
+  
+}
+form .page .field input{
+
+  height: 100%;
+  width: 500px;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding-left: 15px;
+  font-size: 18px;
+
+
+}
+form .page .field select{
+  width: 100%;
+  padding-left: 10px;
+  font-size: 17px;
+  font-weight: 500;
+}
+form .page .field button{
+  width: 100%;
+  height: calc(100% + 5px);
+  border: none;
+  background: #a4b7d1;
+  margin-top: -20px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+}
+form .page .field button:hover{
+  background: #000;
+}
+
+.form-outer form .page .field3{
+  width: 600px;
+  height: 45px;
+  margin: 45px 0;
+  position: relative;
+}
+
+form .page .field3 .label{
+
+  position: absolute;
+  top: 10px;
+  font-weight: 500;
+  font-size: 20px;
+  
+}
+form .page .field3 input{
+
+  height: 100%;
+  width: 170px;
+  border: 1px solid lightgrey;
+  text-align: center;
+  border-radius: 5px;
+  margin-right: 15px;
+  font-size: 18px;
+  float: left;
+  position: relative;
+  left:140px;
+
+}
+form .page .field2 select{
+  width: 100%;
+  padding-left: 10px;
+  font-size: 17px;
+  font-weight: 500;
+}
+form .page .field3 button{
+  width: 100%;
+  height: calc(100% + 5px);
+  border: none;
+  background: #a4b7d1;
+  margin-top: -20px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+}
+form .page .field3 button:hover{
+  background: #000;
+}
+
+.form-outer form .page .field2{
+  width: 600px;
+  height: 45px;
+  margin: 45px 0;
+  position: relative;
+}
+
+form .page .field2 .label{
+
+  position: absolute;
+  top: 10px;
+  font-weight: 500;
+  font-size: 20px;
+  
+}
+form .page .field2 input{
+
+  height: 100%;
+  width: 415px;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding-left: 15px;
+  font-size: 18px;
+  float: right;
+  position: relative;
+  left: 55px;
+}
+form .page .field2 select{
+  width: 100%;
+  padding-left: 10px;
+  font-size: 17px;
+  font-weight: 500;
+}
+form .page .field2 button{
+  width: 100%;
+  height: calc(100% + 5px);
+  border: none;
+  background: #a4b7d1;
+  margin-top: -20px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+}
+form .page .field2 button:hover{
+  background: #000;
+}
+
+form .page .field1 input{
+  height: 100%;
+  width: 500px;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding-left: 15px;
+  font-size: 18px;
+  position: relative;
+}
+
+form .page .field1 select{
+  width: 100%;
+  padding-left: 10px;
+  font-size: 17px;
+  font-weight: 500;
+}
+form .page .field1 button{
+  width: 100%;
+  height: calc(100% + 5px);
+  border: none;
+  background: #a4b7d1;
+  margin-top: -20px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+  position: relative;
+  right: -200px;
+}
+form .page .field1 button:hover{
+  background: #000;
+}
+form .page .btns button{
+  margin-top: -20px!important;
+}
+form .page .btns button.prev{
+  margin-right: 3px;
+  font-size: 17px;
+}
+form .page .btns button.next{
+  margin-left: 3px;
+}
+.container .progress-bar{
+  display: flex;
+  margin: 30px 0;
+  user-select: none;
+}
+.container .progress-bar .step{
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+.container .progress-bar .step p{
+  font-weight: 500;
+  font-size: 18px;
+  color: #000;
+  margin-bottom: 8px;
+}
+.progress-bar .step .bullet{
+  height: 25px;
+  width: 25px;
+  border: 2px solid #000;
+  display: inline-block;
+  border-radius: 50%;
+  position: relative;
+  transition: 0.2s;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 25px;
+}
+.progress-bar .step .bullet.active{
+  border-color: #a4b7d1;
+  background: #a4b7d1;
+}
+.progress-bar .step .bullet span{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.progress-bar .step .bullet.active span{
+  display: none;
+}
+.progress-bar .step .bullet:before,
+.progress-bar .step .bullet:after{
+  position: absolute;
+  content: '';
+  bottom: 11px;
+  right: -145px;
+  height: 3px;
+  width: 140px;
+  background: #262626;
+}
+.progress-bar .step .bullet.active:after{
+  background: #a4b7d1;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: animate 0.3s linear forwards;
+}
+@keyframes animate {
+  100%{
+    transform: scaleX(1);
+  }
+}
+.progress-bar .step:last-child .bullet:before,
+.progress-bar .step:last-child .bullet:after{
+  display: none;
+}
+.progress-bar .step p.active{
+  color: #a4b7d1;
+  transition: 0.2s linear;
+}
+.progress-bar .step .check{
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  font-size: 15px;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+.progress-bar .step .check.active{
+  display: block;
+  color: #fff;
+}
+.dropdown1{
+  position: relative;
+  left: 120px;
+  height: 100%;
+  width: 530px;
+  border-radius: 50px;
+  padding-left: 15px;
+  font-size: 18px;
+  display: flex;
+
+}
+select{
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  color: #a4b7d1;
+}
+
+.dropdown2{
+  position: relative;
+  left: 130px;
+  height: 100%;
+  width: 70px;
+  border-radius: 50px;
+  padding-left: 15px;
+  font-size: 18px;
+  display:inline-flex;
+  float: left;
+
+}
+.dropdown3{
+  position: relative;
+  left: 190px;
+  height: 100%;
+  width: 465px;
+  border-radius: 50px;
+  padding-left: 15px;
+  font-size: 18px;
+  display:inline-flex;
+  float: left;
+
+}
+.btn-next{
+  width: 30%;
+  height: calc(100%);
+  border: none;
+  background: #a4b7d1;
+  margin-top: 0;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+  position: relative;
+  left: 120px;
+   bottom: -15px;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-decoration: none;
+  float: left;
+}
+.btn-next:hover{
+  background: #000;
+}
+.btn-next1{
+  width: 30%;
+  height: calc(100%);
+  border: none;
+  background: #a4b7d1;
+  margin-top: 0;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+  position: relative;
+  left: 170px;
+   bottom: -15px;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-decoration: none;
+  float: left;
+
+}
+.btn-next1:hover{
+  background: #000;
+}
+canvas {
+  height: 120px;
+  width: 120px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  border-radius: 50%;
+  position: relative;
+  left: 200px;
+  top: -40px;
+}
+.dropdown3{
+  height: 100%;
+  width: 465px;
+  border-radius: 50px;
+  font-size: 18px;
+  display:inline-flex;
+  float: right;
+  position: relative;
+  top: 3px;
+}
+.required {
+  color: red;
+}
+
+  </style>
+  <body>
+    <div class="container">
+      
+      <div class="progress-bar">
+        <div class="step">
+         
+          <p style="color:rgb(1, 219, 56)">Basic Info</p>
+            <div class="bullet">
+              <i class="fa fa-check" style="color:rgb(1, 219, 56)"></i>
+            </div>
+<div class="check fas fa-check">
+</div>
+</div>
+      <div class="step">
+          <p style="color:rgb(253, 156, 11)">Personal Info</p>
+            <div class="bullet">
+               <span style="color:rgb(253, 156, 11)">2</span>
+            
+            </div>
+            <div class="check fas fa-check"></div>
+  </div>
+<div class="step">
+          <p>
+Select Post</p>
+<div class="bullet">
+            <span>3</span>
+          </div>
+<div class="check fas fa-check">
+</div>
+</div>
+<div class="step">
+          <p>
+Upload CV</p>
+<div class="bullet">
+            <span>4</span>
+          </div>
+<div class="check fas fa-check">
+</div>
+</div>
+</div>
+<header>Personal Info</header>
+<br>
+<form name="form1" method="POST" action="" enctype="multipart/form-data" >
+  <div class="form-group">
+    <p style="font-size:20px;font-weight:500;position: relative;top:0px;left:-200px;font-family: 'Poppins', sans-serif;">Email :<span class="required">*</span></p>
+  </div>
+  <div class="field">
+      <input style="font-size:20px;border-radius:5px;border-width:thin;padding-left:10px;width: 400px;height: 45px;position: relative;left:100px;bottom:40px;border: 1px solid lightgrey;" type="text" id="email" placeholder="Email">
+  </div>
+
+
+  <div class="form-group">
+    <p style="font-size:20px;font-weight:500;position: relative;top:0px;left:-200px;font-family: 'Poppins', sans-serif;">Date Of Birth :<span class="required">*</span></p>
+  </div>
+  <div class="field">
+  <input style="color:grey;font-size:20px;border-radius:5px;border-width:thin;padding-left:10px;width: 400px;height: 45px;position: relative;left:100px;bottom:40px;border: 1px solid lightgrey;" type="date" id="dob" placeholder="Date Of Birth">
+  </div>
+  
+
+  <div class="form-group">
+    <p style="font-size:20px;font-weight:500;position: relative;top:0px;left:-200px;font-family: 'Poppins', sans-serif;">Gender :<span class="required">*</span></p>
+  </div>
+  <div class="field">
+      <div class="dropdown1">
+        <select style="font-size:20px;border-radius:5px;color:grey;padding-left:10px;width: 410px;height: 45px;position: relative;left:110px;bottom:40px;border: 1px solid lightgrey;" name="gen" id="gender">
+          <option disabled value selected>Select Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="others">Others</option> 
+        </select>
+      </div>
+  </div>
+
+
+  <div class="form-group">
+    <p style="font-size:20px;font-weight:500;position: relative;top:0px;left:-200px;font-family: 'Poppins', sans-serif;">Address :<span class="required">*</span></p>
+  </div>
+  <div class="field">
+  <input style="font-size:20px;border-radius:5px;border-width:thin;padding-left:10px;width: 400px;height: 45px;position: relative;left:100px;bottom:40px;border: 1px solid lightgrey;" type="text" id="Add1" placeholder="Address line 1">
+  </div><br>
+  <div class="field">
+  <input style="font-size:20px;border-radius:5px;border-width:thin;padding-left:10px;width: 400px;height: 45px;position: relative;left:100px;bottom:40px;border: 1px solid lightgrey;" type="text" id="Add2" placeholder="Address line 2">
+  </div>
+
+
+<div class="form-group">
+    <p style="font-size:20px;font-weight:500;position: relative;top:0px;left:-200px;font-family: 'Poppins', sans-serif;">State :<span class="required">*</span></p>
+  </div>
+  <div class="field">
+    <div class="dropdown3">
+      <select id="state" style="font-size:20px;border-radius:5px;color:grey;padding-left:10px;width: 410px;height: 45px;position: relative;left:-180px;bottom:40px;border: 1px solid lightgrey;">
+        <option disabled value selected>Select State</option>
+        <option>Andhra Pradesh</option>
+        <option>Arunachal Pradesh</option>
+        <option>Assam</option>
+        <option>Bihar</option>
+        <option>Chhattisgarh</option>
+        <option>Goa</option>
+        <option>Gujarat</option>
+        <option>Hariyana</option>
+        <option>Himachal Pradesh</option>
+        <option>Jharkhand</option>
+        <option>Karnataka</option>
+        <option>Kerala</option>
+        <option>Madhya Pradesh</option>
+        <option>Maharashtra</option>
+        <option>Manipur</option>
+        <option>Meghalaya</option>
+        <option>Mizoram</option>
+        <option>Nagaland</option>
+        <option>Odisha</option>
+        <option>Punjab</option>
+        <option>Rajasthan</option>
+        <option>Tamil Nadu</option>
+        <option>Telangana</option>
+        <option>Tripura</option>
+        <option>Uttar Pradesh</option>
+        <option>Uttarakhand</option>
+        <option>West Bengal</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <p style="font-size:20px;font-weight:500;position: relative;top:55px;left:40px;font-family: 'Poppins', sans-serif;">City :<span class="required">*</span></p>
+  </div>
+  <div class="field">
+    <input style="font-size:20px;border-radius:5px;border-width:thin;padding-left:10px;width: 400px;height: 45px;position: relative;left:100px;bottom:0px;border: 1px solid lightgrey;" type="text" id="city" placeholder="City">
+  </div>
+  
+  <div class="form-group">
+    <p style="font-size:20px;font-weight:500;position: relative;top:40px;right:200px;font-family: 'Poppins', sans-serif;">Pincode :<span class="required">*</span></p>
+  </div>
+  <div class="field">
+  <input style="font-size:20px;border-radius:5px;border-width:thin;padding-left:10px;width: 400px;height: 45px;position: relative;left:100px;bottom:0px;border: 1px solid lightgrey;" type="text" id="pin" placeholder="PIN">
+  </div>
+<br>
+<script src="https://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js"></script>
+<div class="label" style="position: relative;top: 50px;left:100px;font-weight: 500;font-size:20px;text-align: left;">Upload and <br>Display Image :</div>
+<canvas id= "canv1" ></canvas>
+
+<p><div style="position: relative;bottom: 10px;left:400px;text-align: left">
+<p>Accepted Formats:  JPEG, JPG, PNG</p>
+Filename:
+
+<input type="file" multiple="false" accept="image/*" id=finput onchange="upload()"></div>
+</p>
+
+<script>
+  function upload(){
+  var imgcanvas = document.getElementById("canv1");
+  var fileinput = document.getElementById("finput");
+  var image = new SimpleImage(fileinput);
+  image.drawTo(imgcanvas);
+}
+</script>
+  
+<br><br>
+<a href="/basic" class="btn btn-next" >Previous</a>
+  <a href="/select_post" class="btn btn-next1" onclick="saveData()">Next</a>
+  <br><br><br><br>
+</form>
+    
+<script>
+  function saveData(){
+    email=document.getElementById('email').value
+    localStorage.setItem("email",email)
+    dob=document.getElementById('dob').value
+    localStorage.setItem("dob",dob)
+    gender=document.getElementById('gender').value
+    localStorage.setItem("gender",gender)
+    Add1=document.getElementById('Add1').value
+    localStorage.setItem("Add1",Add1)
+    Add2=document.getElementById('Add2').value
+    localStorage.setItem("Add2",Add2)
+    city=document.getElementById('city').value
+    localStorage.setItem("city",city)
+    state=document.getElementById('state').value
+    localStorage.setItem("state",state)
+    pin=document.getElementById('pin').value
+    localStorage.setItem("pin",pin)  
+
+    
+  }
+</script>
+
+
+  </body>
+</html>

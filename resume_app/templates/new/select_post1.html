@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Select Post</title>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    
+
+    <script>
+      function checkforblank(){
+
+        if (document.getElementById('fname').value == "" && document.getElementById('phno')){
+          alert('Please enter your Full Name and Mobile No.');
+          document.getElementById('fname').style.borderColor="red";
+          document.getElementById('phno').style.borderColor="red"; 
+          return false;}
+        else if (document.getElementById('fname').value==""){
+          alert('Please enter your Full Name');
+          document.getElementById('fname').style.borderColor="red";
+          return false;}
+        else if (document.getElementById('phno').value == "") {
+          alert('Please enter your Mobile Number');
+          document.getElementById('phno').style.borderColor="red";
+          return false; }
+        else {
+          var phoneno = /^\d{10}$/;
+          if(document.getElementById('phno').value.match(phoneno)){
+          return true;}
+          else{        
+          alert("Please enter 10 digit Phone Number");
+          return false;}
+        }
+      }
+    </script>
+  </head>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+    
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #a4b7d1; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background: url("bg.png"), -webkit-linear-gradient(bottom,#F0FFFF,#B0C4DE);
+}
+::selection{
+  color: #fff;
+  background: #a4b7d1;
+}
+.align{
+  right: 500px;
+}
+.container{
+  width: 700px;
+  height: 650px;
+  background: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 0px 35px 10px 35px;
+  margin: 20px;
+}
+.container header{
+  font-size: 35px;
+  font-weight: 600;
+  margin: 0 0 30px 0;
+}
+.container .form-outer{
+  width: 100%;
+  overflow: hidden;
+}
+.container .form-outer form{
+  display: flex;
+  width: 400%;
+}
+.form-outer form .page{
+  width: 25%;
+  transition: margin-left 0.3s ease-in-out;
+}
+.form-outer form .page .title{
+  text-align: center;
+  font-size: 25px;
+  font-weight: 500;
+}
+.form-outer form .page .field{
+  width: 800px;
+  height: 45px;
+  margin: 45px 0;
+  
+  position: relative;
+}
+.form-outer form .page .field1{
+  width: 330px;
+  height: 45px;
+  margin: 45px 0;
+  display: flex;
+  position: relative;
+}
+form .page .field .label{
+
+  position: absolute;
+  top: 10px;
+  font-weight: 500;
+  font-size: 20px;
+  
+}
+form .page .field1 .label{
+
+  position: absolute;
+  top: -30px;
+  font-weight: 500;
+  
+}
+form .page .field input{
+
+  height: 100%;
+  width: 500px;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding-left: 15px;
+  font-size: 18px;
+
+
+}
+form .page .field select{
+  width: 100%;
+  padding-left: 10px;
+  font-size: 17px;
+  font-weight: 500;
+}
+form .page .field button{
+  width: 100%;
+  height: calc(100% + 5px);
+  border: none;
+  background: #a4b7d1;
+  margin-top: -20px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+}
+form .page .field button:hover{
+  background: #000;
+}
+.btn-next{
+  width: 30%;
+  border: none;
+  background: #a4b7d1;
+  margin-top: 0;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+  position: relative;
+  left: 120px;
+  bottom: -15px;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-decoration: none;
+  float: left;
+}
+
+.btn-next:hover{
+  background: #000;
+}
+.btn-next1{
+  width: 30%;
+  border: none;
+  background: #a4b7d1;
+  margin-top: 0;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+  position: relative;
+  left: 170px;
+  bottom: -15px;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-decoration: none;
+  float: left;
+}
+.btn-next1:hover{
+  background: #000;
+}
+
+.form-outer form .page .field2{
+  width: 600px;
+  height: 45px;
+  margin: 45px 0;
+  position: relative;
+}
+
+form .page .field2 .label{
+
+  position: absolute;
+  top: 10px;
+  font-weight: 500;
+  font-size: 20px;
+  
+}
+form .page .field2 input{
+
+  height: 100%;
+  width: 415px;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding-left: 15px;
+  font-size: 18px;
+  float: right;
+  position: relative;
+  left: 55px;
+}
+form .page .field2 select{
+  width: 100%;
+  padding-left: 10px;
+  font-size: 17px;
+  font-weight: 500;
+}
+form .page .field2 button{
+  width: 100%;
+  height: calc(100% + 5px);
+  border: none;
+  background: #a4b7d1;
+  margin-top: -20px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+}
+form .page .field2 button:hover{
+  background: #000;
+}
+form .page .field1 input{
+  height: 100%;
+  width: 500px;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding-left: 15px;
+  font-size: 18px;
+  position: relative;
+
+}
+form .page .field1 select{
+  width: 100%;
+  padding-left: 10px;
+  font-size: 17px;
+  font-weight: 500;
+}
+form .page .field1 button{
+  width: 100%;
+  height: calc(100% + 5px);
+  border: none;
+  background: #a4b7d1;
+  margin-top: -20px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+  position: relative;
+  right: -200px;
+}
+form .page .field1 button:hover{
+  background: #000;
+}
+form .page .btns button{
+  margin-top: -20px!important;
+}
+form .page .btns button.prev{
+  margin-right: 3px;
+  font-size: 17px;
+}
+form .page .btns button.next{
+  margin-left: 3px;
+}
+.container .progress-bar{
+  display: flex;
+  margin: 30px 0;
+  user-select: none;
+}
+.container .progress-bar .step{
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+.container .progress-bar .step p{
+  font-weight: 500;
+  font-size: 18px;
+  color: #000;
+  margin-bottom: 8px;
+}
+.progress-bar .step .bullet{
+  height: 25px;
+  width: 25px;
+  border: 2px solid #000;
+  display: inline-block;
+  border-radius: 50%;
+  position: relative;
+  transition: 0.2s;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 25px;
+}
+.progress-bar .step .bullet.active{
+  border-color: #a4b7d1;
+  background: #a4b7d1;
+}
+.progress-bar .step .bullet span{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.progress-bar .step .bullet.active span{
+  display: none;
+}
+.progress-bar .step .bullet:before,
+.progress-bar .step .bullet:after{
+  position: absolute;
+  content: '';
+  bottom: 11px;
+  right: -145px;
+  height: 3px;
+  width: 140px;
+  background: #262626;
+}
+.progress-bar .step .bullet.active:after{
+  background: #a4b7d1;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: animate 0.3s linear forwards;
+}
+@keyframes animate {
+  100%{
+    transform: scaleX(1);
+  }
+}
+.progress-bar .step:last-child .bullet:before,
+.progress-bar .step:last-child .bullet:after{
+  display: none;
+}
+.progress-bar .step p.active{
+  color: #a4b7d1;
+  transition: 0.2s linear;
+}
+.progress-bar .step .check{
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  font-size: 15px;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+.progress-bar .step .check.active{
+  display: block;
+  color: #fff;
+}
+.dropdown1{
+  position: relative;
+  left: 120px;
+  height: 100%;
+  width: 530px;
+  border-radius: 50px;
+  padding-left: 15px;
+  font-size: 18px;
+  display: flex;
+
+}
+select{
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  color: #a4b7d1;
+}
+.dropdown3{
+  position: relative;
+  left: 190px;
+  height: 100%;
+  width: 465px;
+  border-radius: 50px;
+  padding-left: 15px;
+  font-size: 18px;
+  display:inline-flex;
+  float: left;
+
+}
+.required {
+  color: red;
+}
+
+</style>
+  <body>
+    <div class="container">
+      <div class="progress-bar">
+        <div class="step">
+         
+          <p style="color:rgb(1, 219, 56)">Basic Info</p>
+            <div class="bullet">
+              <i class="fa fa-check" style="color:rgb(1, 219, 56)"></i>
+            </div>
+          </div>
+            <div class="step">
+         
+              <p style="color:rgb(1, 219, 56)">Personal Info</p>
+                <div class="bullet">
+                  <i class="fa fa-check" style="color:rgb(1, 219, 56)"></i>
+                </div>
+                </div>
+<div class="step">
+          <p style="color:rgb(253, 156, 11)">
+Select Post</p>
+<div class="bullet">
+            <span style="color:rgb(253, 156, 11)">3</span>
+          </div>
+<div class="check fas fa-check">
+</div>
+</div>
+<div class="step">
+          <p>
+Upload CV</p>
+<div class="bullet">
+            <span>4</span>
+          </div>
+<div class="check fas fa-check">
+</div>
+</div>
+</div> 
+<br>
+
+<header>Select Post</header>      
+<br><br>
+        <form name="form1" method="POST" action="" enctype="multipart/form-data">
+          <div class="form-group">
+            <p style="font-size:20px;font-weight:500;position: relative;top:0px;left:-250px;font-family: 'Poppins', sans-serif;">Post Type<span class="required">*</span></p>
+          </div>
+          <div class="field">
+            <div class="dropdown1">
+              <select style="font-size:20px;color:grey;border-radius:5px;border-width:thin;padding-left:10px;width: 410px;height: 45px;position: relative;left:40px;bottom:40px;border: 1px solid lightgrey;" id="pType" onchange="configureDropDownLists(this,document.getElementById('desig'))">
+                <option disabled value selected>Select Post</option>
+                <option value="Teaching">Teaching</option>
+                <option value="Non-Teaching">Non-Teaching</option>
+              </select>
+  
+              <select style="font-size:20px;color:grey;border-radius:5px;border-width:thin;padding-left:10px;width: 410px;height: 45px;position: relative;left:40px;bottom:40px;border: 1px solid lightgrey;" id="desig">
+                <option disabled value selected>Select Post</option>
+              </select>
+            </div>
+          </div>
+
+
+    <script>
+      function configureDropDownLists(ddl1,desig) {
+      var teach = ['Professor', 'Assistant Professor', 'Associate Professor' , 'Teaching Assistant'];
+      var non = ['Admission Counsilling', 'HR Executive', 'Office Executive' , 'Placement Officer' , 'Others'];
+      
+      switch (ddl1.value) {
+          case 'Teaching':
+              desig.options.length = 0;
+              for (i = 0; i < teach.length; i++) {
+                  createOption(desig, teach[i], teach[i]);
+              }
+              break;
+          case 'Non-Teaching':
+              desig.options.length = 0; 
+          for (i = 0; i < non.length; i++) {
+              createOption(desig, non[i], non[i]);
+              }
+              break;
+          
+              default:
+                  desig.options.length = 0;
+              break;
+           }
+       }
+  
+      function createOption(pType, text, value) {
+          var opt = document.createElement('option');
+          opt.value = value;
+          opt.text = text;
+          pType.options.add(opt);
+       }
+       
+    </script>          
+            <div class="form-group">
+              <p style="font-size:20px;font-weight:500;position: relative;top:0px;left:-200px;font-family: 'Poppins', sans-serif;">Department<span class="required">*</span></p>
+            </div>
+            <div class="field">
+              <div class="dropdown3">
+                <select style="font-size:20px;color:grey;border-radius:5px;border-width:thin;padding-left:10px;width: 410px;height: 45px;position: relative;left:40px;bottom:40px;border: 1px solid lightgrey;" id="dept" name="dep">
+                  <option disabled value selected style="color: gray;">Select Department</option>
+                  <option disabled value style="color: gray">Undergraduate</option>
+                  <option value="ise" style="color: black;">Information Science and Engineering</option>
+                  <option value="cse" style="color: black;">Computer Science and Engineering</option>
+                  <option value="eee" style="color: black;">Electrical and Electronics Engineering</option>
+                  <option value="ece" style="color: black;">Electronics and Communication Engineering</option>
+                  <option value="tce" style="color: black;">Telecommunication Engineering</option>
+                  <option value="me" style="color: black;">Mechanical Engineering</option>
+                  <option value="cve" style="color: black;">Civil Engineering</option>
+                  <option disabled value style="color: grey;">Postgraduate</option>
+                  <option value="mca" style="color: black;">Master of Computer Applications</option>
+                  <option value="mba" style="color: black;">Master of Business Administration</option>
+                  <option value="mtechc" style="color: black;">Computer Science Engineering</option>
+                  <option value="mtechv" style="color: black;">VLSI Design & Embedded Systems</option>
+                  <option disabled value style="color: gray;">Doctoral</option>
+                  <option value="engg" style="color: black;">Engineering</option>
+                  <option value="ba" style="color: black;">Business Administration</option>
+                  <option value="ca" style="color: black;">Computer Applications</option>
+                  <option value="sc" style="color: black;">Sciences</option>
+                </select>
+              </div>
+            </div>
+            <br><br><br>
+
+          <!-- <input type="submit" class="btn btn-primary" value="submit"> -->
+          <a href="/basic_info" class="btn-next">Previous</a>
+          <a href="/upload_cv" class="btn-next1" onclick="sendToServer()">Save</a>
+          
+        </form>
+        <br><br><br><br><br>
+     
+
+      <script>
+        function sendToServer(){
+
+          pType=document.getElementById('pType').value
+          localStorage.setItem("pType",pType)
+
+          desig=document.getElementById('desig').value
+          localStorage.setItem("desig",desig)
+
+          dept=document.getElementById('dept').value
+          localStorage.setItem("dept",dept)
+          }
+
+          var data = {
+                name: localStorage.getItem("name"),
+                phno:localStorage.getItem("phno"),
+                email : localStorage.getItem("email"),
+                dob: localStorage.getItem("dob"),
+                gender : localStorage.getItem("gender"),
+                Add1 : localStorage.getItem("Add1"),
+                Add2 : localStorage.getItem("Add2"),
+                city : localStorage.getItem("city"),
+                state : localStorage.getItem("state"),
+                pin : localStorage.getItem("pin"),
+                pType: localStorage.getItem("pType"),
+                desig: localStorage.getItem("desig"),
+                dept: localStorage.getItem("dept")
+              }
+              console.log(data)
+
+          const options = {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(data)
+                  };
+
+              fetch("/postreq",options)
+      </script>
+  </body>
+</html>

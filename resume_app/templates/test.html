@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Python Button Script
+        </title>
+    </head>
+    <body>
+        <button onclick="location.href='{% url 'script' %}'">Execute script</button><hr>
+        {% if data %}
+        {{ data }}
+        {% endif %}
+
+        <form action="external" method="POST">
+            {% csrf_token %}
+            
+            <br><br>
+
+            {{data_external}}
+            <br><br>
+            <h6>SKILLS</h6>
+            <input id="email" class="row-input" type="text" value={{data2}} required>
+            {{data3}}
+            {{data4}}
+            <h6>RESEARCH</h6>
+            {{data5.RESEARCH}}
+
+            <h6>PERSONAL</h6>
+            {{data5.PERSONAL}}
+
+            <h6>CONFERENCE</h6>
+            {{data5.CONFERENCE}}
+
+            <h6>EXPERIENCE</h6>
+            {{data5.EXPERIENCE}}
+
+            <h6>SUMMARY</h6>
+            {{data5.SUMMARY}}
+
+            <h6>INTEREST</h6>
+            {{data5.INTEREST}}
+
+            <h6>AWARD</h6>
+            {{data5.AWARD}}
+
+            <h6>PUBLICATION</h6>
+            {{data5.PUBLICATION}}   
+
+            <h6>FEST</h6>
+            {{data5.FEST}}
+
+            <h6>CULTURAL</h6>
+            {{data5.CULTURAL}}
+
+            <h6>AWARD</h6>
+            {{data5.AWARD}}
+
+            <h6>EXAM</h6>
+            {{data5.EXAM}}
+
+            <h6>PROFESSIONAL</h6>
+            {{data5.PROFESSIONAL}}
+
+            <h6>REFERENCE</h6>
+            {{data5.REFERENCE}}
+
+            <h6>DECLARATION</h6>
+            {{data5.DECLARATION}}
+
+            <h6>EXTRA</h6>
+            {{data5.EXTRA}}
+
+            <br><br>
+            <input type="submit" value="Execute">
+            
+
+        </form>
+    </body>
+</html>

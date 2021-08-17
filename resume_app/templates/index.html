@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% load static %}
+	<title>CMR Institute Of Technology</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<style type="text/css">
+
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:30124z0,600');
+body {
+	overflow-x: hidden;
+	font-family: 'Work Sans', sans-serif;
+  height: 100vh;
+}
+header {
+  background: black; 
+  height: 150px; 
+  width: 10000px;
+  position: relative;
+  bottom: 40px;
+  left:-20px;
+}
+.header {
+  list-style-type: none; 
+  display: flex; 
+  align-items: center;
+  line-height: 40px; 
+}
+.header img {
+  height: 170px;
+  width: 180px;
+  position: absolute; 
+  top: -10px; 
+  left: 28px; 
+}
+.header li {
+  padding: 20px;
+  padding-left: 40px; 
+}
+.header a {
+  text-decoration: none; 
+  color: white; 
+  font-size: 20px;
+}
+.header a:hover {
+  border-bottom: solid 5px#808080; 
+  color: #808080;
+}
+.footer {
+  background-color: #000;
+  width: 1550px;
+  text-align: left;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 50px;
+  position: relative;
+  height: 250px;
+  bottom: 500px;
+  left: -10px;
+}
+
+.footer .footer-left,
+.footer .footer-center,
+.footer .footer-right {
+  display: inline-block;
+  vertical-align: top;
+}
+
+
+/* footer left*/
+
+.footer .footer-left {
+  width: 33%;
+  padding-right: 15px;
+}
+
+.footer .about {
+  line-height: 20px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.footer .about span {
+  display: block;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.footer .icons {
+  margin-top: 25px;
+  position: relative;
+  left: 50px;
+}
+
+.footer .icons a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  background-color: #33383b;
+  border-radius: 2px;
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 35px;
+  margin-right: 3px;
+  margin-bottom: 5px;
+}
+
+
+/* footer center*/
+
+.footer .footer-center {
+  width: 30%;
+}
+
+.footer .footer-center i {
+  background-color: #33383b;
+  color: #ffffff;
+  font-size: 25px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 42px;
+  margin: 10px 15px;
+  vertical-align: middle;
+}
+
+.footer .footer-center i.fa-envelope {
+  font-size: 17px;
+  line-height: 38px;
+}
+
+.footer .footer-center p {
+  display: inline-block;
+  color: #ffffff;
+  vertical-align: middle;
+  margin: 0;
+}
+
+.footer .footer-center p span {
+  display: block;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 2;
+}
+
+.footer .footer-center p a {
+  color: #0099ff;
+  text-decoration: none;
+}
+
+
+/* footer right*/
+
+.footer .footer-right {
+  width: 35%;
+}
+
+.footer h2 {
+  color: #ffffff;
+  font-size: 36px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.footer h2 span {
+  color: #0099ff;
+}
+
+.footer .menu {
+  color: #ffffff;
+  margin: 20px 0 12px;
+  padding: 0;
+}
+
+.footer .menu a {
+  display: inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer .menu a:hover {
+  color: gray;
+}
+
+.footer .name {
+  color: gray;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+}
+
+@media (max-width: 767px) {
+  .footer {
+    font-size: 14px;
+  }
+  .footer .footer-left,
+  .footer .footer-center,
+  .footer .footer-right {
+    display: block;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  .footer .footer-center i {
+    margin-left: 0;
+  }
+}
+.footer-img {
+	height: 240px;
+  	width: 250px;
+  	position: relative;
+  	bottom: 20px;
+  	left: 50px;
+}
+.icons a:hover  {
+	background-color: #808080;
+  transform: scale(1.2);
+  transition: all 0.3s ease;
+}
+
+.card {
+    cursor: pointer;
+    margin: 50px;
+    border-radius: 3px;
+    perspective: 1000px;
+    position: relative;
+    left: 10px;
+    bottom: 245px;
+}
+.card__inner {
+    background-color: #fcfcfc;
+    color: #000000;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    border-radius: 50px;
+    height: 400px;
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.card:hover .card__inner {
+    transform: rotateY(180deg);
+}
+
+.card__content {
+    position: absolute;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+
+.card__content--back {
+  transform: rotateY(180deg);
+} 
+
+/*----------------------------*/
+.card1 {
+    cursor: pointer;
+    margin: 50px;
+    border-radius: 3px;
+    perspective: 1000px;
+    position: relative;
+    left: 500px;
+    bottom: 700px;
+}
+
+.card__inner1 {
+    background-color: #fcfcfc;
+    color: #000000;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    height: 400px;
+    width: 350px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.card1:hover .card__inner1 {
+    transform: rotateY(180deg);
+}
+
+.card__content1 {
+    position: absolute;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+
+.card__content--back1 {
+  transform: rotateY(180deg);
+} 
+#subscribe-footer i.icon-chevron-right{
+	color:#2980B9;
+  font-size:97px;
+  z-index:-999;
+}
+#subscribe-footer form {
+    float: right;
+    margin: 28px;
+}
+#subscribe-footer form .inptfld {
+    font-family: Open Sans;
+    outline: medium none;
+    border: medium none;
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 3px;
+    width: 250px;
+    position:relative;
+    right: 70px;
+}
+#subscribe-footer form .subscribebtn {
+font-famiy: open sans;
+outline: none;
+border: none;
+padding: 10px;
+border-radius: 3px;
+color: #fff;
+background: #1a1a1a;
+cursor: pointer;
+margin-left: 10px;
+position: relative;
+right: 70px;
+}
+#subscribe-footer form .subscribebtn:hover {
+background: gray;
+-webkit-transition: all .6s ease 0;
+-moz-transition: all .6s ease;
+-ms-transition: all .6s ease 0;
+-o-transition: all .6s ease 0;
+transition: all .6s ease 0;
+}
+
+
+/*------------------subscribe------------------*/
+
+/*--------------------description tabs-----------*/
+
+#tab-contents {
+   margin: 0 auto;
+   width: 50vw;
+}
+ .tabs {
+   display: flex;
+   padding: 0;
+}
+ .tabs li {
+   position: relative;
+   list-style-type: none;
+   transition: all 0.3s ease;
+   margin-right: 10px;
+   padding: 10px 15px;
+   border-radius: 5px;
+   background-color: #dfdfdf;
+   cursor: pointer;
+   font-weight: 500;
+   font-size: 25px;
+}
+ .tabs li:hover {
+   background-color:  #D3D3D3;
+   color: #000000;
+}
+ .tabs li:hover::before {
+   visibility: visible;
+   width: 95%;
+}
+ .tabs li.active {
+   background-color: #000000;
+   color: #eee;
+}
+ .tabs li::before {
+   content: "";
+   position: absolute;
+   visibility: hidden;
+   transform: translateX(-50%);
+   transition: all 0.3s ease;
+   bottom: 0;
+   left: 50%;
+   width: 0;
+   height: 3px;
+   border-radius: 0 0 5px 5px;
+   background-color: black;
+}
+ .panel {
+   display: none;
+   transition: all 1s ease;
+   border: 1px solid #dfdfdf;
+   border-radius: 5px;
+   padding: 0 15px;
+}
+ .panel.active {
+   display: block;
+   animation: fadeIn 1s;
+}
+ @keyframes fadeIn {
+   from {
+     opacity: 0;
+  }
+   to {
+     opacity: 1;
+  }
+}
+/*--------------------description tabs-----------*/
+
+/*---------------apply now button-----------*/
+
+.btn-next{
+  width: 30%;
+  border: none;
+  background: #D3D3D3;
+  margin-top: 0;
+  border-radius: 5px;
+  color: #000000;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+  position: relative;
+  left: 500px;
+  top:100px;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-decoration: none;
+  float: left;
+}
+
+.btn-next:hover{
+  background: #000;
+  color: white;
+}
+ 
+ /*---------------apply now button-----------*/
+
+</style>
+
+</head>
+<body>
+
+
+<header>
+	<p style="position: relative;left:550px;bottom:-20px;color: white;font-size: 35px;">CMR INSTITUTE OF TECHNOLOGY</p>
+  <ul class="header">
+    <li class="logo"><a href="#"><img src="{% static 'img/cmrit-white.png' %}"></a></li>
+    <li class="text" style="position: relative;left: 300px;bottom:1px;"><a href="/login_admin">ADMIN</a></li>
+    <li class="text" style="position: relative;left: 300px;bottom:1px;"><a href="/reception">RECEPTIONIST</a></li>
+    <li class="text" style="position: relative;left: 300px;bottom:1px;"><a href="/basic">APPLY NOW</a></li>
+    <li class="text" style="position: relative;left: 300px;bottom:1px;"><a href="#">CONTACT US</a></li>
+    <li class="text" style="position: relative;left: 300px;bottom:1px;"><a href="#">FAQ</a></li>
+    <li class="text" style="position: relative;left: 300px;bottom:1px;"><a href="#"></a></li>
+  </ul>
+</header>
+
+<div>
+	<h1 style="margin-left: 10px;">ABOUT CMRIT</h1>
+	<hr style="width: 700px;float: left;position: relative;bottom: 20px;">
+	<img src="{% static 'img/c1.jpg' %}" style="position: relative;margin-right: 30px;float: right;bottom:50px;width: 750px;margin-left: 20px;height: 380px;">
+	<p style="margin-left: 10px;font-size: 18px;">
+	Established in 2000, the CMR Institute of Technology imparts quality, pragmatic education in engineering and management to help students hone their analytical abilities and develop their creative thinking skills. CMRIT meets the rapidly growing need for technology professionals by nurturing young minds in an innovative and progressive learning environment. Situated in the very heart of South India’s IT corridor, the CMRIT campus in Whitefield, Bangalore is centrally located, well connected and easily accessible.
+	<br><br>
+	At CMRIT, we are dedicated to holding aloft the flame of Sri Chikka Muniyappa Reddy’s dreams. Towards this end, we are committed to promoting technical education as a catalyst to the growth and development of the country and society at large. With world-class infrastructure and experienced faculty, CMR Institute of Technology is the preferred destination for technocrats and managers who wish to shape the future.</p>
+  <hr>
+</div>
+
+<!--------------------------card---------------------------------------------------->
+<div style="position: relative;right: 50px;">
+  <h1 style="position: relative;left: 1000px;top:100px;font-size: 50px;line-height:10px;padding:20px;width:700px;border-bottom: 2px solid #000;border-top: 2px solid #000;border-right:50px;"><p>POSTS YOU CAN</p><p style="font-size: 70px;"> APPLY  FOR</p></h1>
+</div>
+<div class="card">
+  <div class="card__inner">
+    
+    <div class="card__content card_content--front" style="position:relative;bottom:0px;" >
+      <img src="{% static 'img/pngwing.com.png' %}" style="width: 150px;height:150px;margin-left:50px;">
+      <h2 style="padding:20px;border-bottom: 2px solid #000;border-top: 2px solid #000;" >TEACHING POSTS</h2>
+    </div>
+    <div class="card__content card__content--back">
+      <ul>
+        <li style="font-size: 25px;line-height:50px;">Professor</li>
+        <li style="font-size: 25px;line-height:50px;">Assistant Professor</li>
+        <li style="font-size: 25px;line-height:50px;">Associate Professor</li>
+        <li style="font-size: 25px;line-height:50px;">Teaching Assistant</li>
+      </ul>  
+    </div>
+  </div>
+</div>
+
+<div class="card1">
+  <div class="card__inner1">
+    
+    <div class="card__content1 card_content--front1" style="position:relative;bottom:0px;">
+      <img src="{% static 'img/PngItem_113308.png' %}" style="width: 200px;height:200;margin-left: 50px;">
+      <h2 style="padding:20px;border-bottom: 2px solid #000;border-top: 2px solid #000;">NON-TEACHING POST</h2>
+    </div>
+    <div class="card__content1 card__content--back1">
+      <ul>
+        <li style="font-size: 25px; line-height:50px;">Admission Counsilling</li>
+        <li style="font-size: 25px;line-height:50px;">HR Executive</li>
+        <li style="font-size: 25px;line-height:50px;">Office Executive</li>
+        <li style="font-size: 25px;line-height:50px;">Placement Officer</li>
+        <li style="font-size: 25px;line-height:50px;">Others</li>
+      </ul>  
+    </div>
+  </div>
+</div>
+<!--------------------------card---------------------------------------------------->
+
+<footer style="color:lightgrey;background-color:#000;height:200px;width: 1550px;text-align: center; font-family: sans-serif;font-size: 16px;padding:20px;position: relative;right:50px;bottom:650px;">
+  <img style="width:170px;height:150px;position: relative;right:250px;" src="{% static 'img/vtu.png' %}">
+  <img style="width:150px;height:150px;position: relative;right:100px;" src="{% static 'img/aicte.png' %}">
+  <img style="width:150px;height:140px;position: relative;left:70px;" src="{% static 'img/nba.png' %}">
+  <img style="width:200px;height:150px;position: relative;left:220px;" src="{% static 'img/naac1.png' %}">
+  <p style="position: relative;right:500px;font-weight: bold;">Affiliated to Visvesvaraya<br> Technological University</p>
+  <p style="position: relative;right:200px;font-weight: bold;bottom:55px;">Approved by AICTE<br> New Delhi</p>
+  <p style="position: relative;left:140px;font-weight: bold;bottom:105px;">Accredited by NBA</p>
+  <p style="position: relative;left:470px;font-weight: bold;bottom:143px;">Accredited by <br>NAAC with A+</p>
+</footer>
+
+
+<!--------------------------description tabs---------------------------------------------------->
+<div id="tab-contents" style="position: relative;bottom:550px;width:1400px;height:auto;">
+  <ul class="tabs" >
+    <li data-target="#projects" class="active">Courses</li>
+    <li data-target="#about">Departments</li>
+    <li data-target="#contact">Procedure</li>
+     <li data-target="#posts">Eligibility Criteria</li>
+  </ul>
+  <div class="panel active" id="projects" style="height: 400px;">
+    <p style="font-size: 20px;"><strong>Undergraduate Programmes</strong></p>
+    <ul>
+        <li style="font-size: 16px;line-height: 30px;">B.E. | INFORMATION SCIENCE & ENGINEERING</li>
+        <li style="font-size: 16px;line-height: 30px;">B.E. | COMPUTER SCIENCE & ENGINEERING</li>
+        <li style="font-size: 16px;line-height: 30px;">B.E. | ELECTRONICS & COMMUNICATION ENGINEERING</li>
+        <li style="font-size: 16px;line-height: 30px;">B.E. | ELECTRICAL & ELECTRONICS ENGINEERING</li>
+        <li style="font-size: 16px;line-height: 30px;">B.E. | MECHANICAL ENGINEERING</li>
+
+        <li style="font-size: 16px;line-height: 30px;">B.E. | CIVIL ENGINEERING</li>
+        <li style="font-size: 16px;line-height: 30px;">B.E. | TELECOMMUNICATION ENGINEERING</li>
+        <li style="font-size: 16px;line-height: 30px;">B.E. | ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING</li>
+        <li style="font-size: 16px;line-height: 30px;">B.E. | ARTIFICIAL INTELLIGENCE AND DATA SCIENCE</li>
+      </ul>  
+
+      <div style="position:relative;left:500px;bottom: 335px;">
+       <p style="font-size: 20px;"><strong>Postgraduate Programmes</strong></p>
+    <ul>
+        <li style="font-size: 16px;line-height: 30px;">MCA (MASTER OF COMPUTER APPLICATIONS)</li>
+        <li style="font-size: 16px;line-height: 30px;">MBA (MASTER OF BUSINESS ADMINISTRATION)</li>
+        <li style="font-size: 16px;line-height: 30px;">M. TECH | COMPUTER SCIENCE & ENGINEERING</li>
+        <li style="font-size: 16px;line-height: 30px;">M. TECH | VLSI DESIGN & EMBEDDED SYSTEMS</li>
+      </ul>  </div>
+
+      <div style="position:relative;left:940px;bottom: 520px;">
+       <p style="font-size: 20px;" ><strong>Doctoral Programmes</strong></p>
+    <ul>
+        <li style="font-size: 16px;line-height: 30px;">MCA (MASTER OF COMPUTER APPLICATIONS)</li>
+        <li style="font-size: 16px;line-height: 30px;">MBA (MASTER OF BUSINESS ADMINISTRATION)</li>
+        <li style="font-size: 16px;line-height: 30px;">M. TECH | COMPUTER SCIENCE & ENGINEERING</li>
+        <li style="font-size: 16px;line-height: 30px;">M. TECH | VLSI DESIGN & EMBEDDED SYSTEMS</li>
+      </ul>  </div>
+
+  </div>
+  <div class="panel" id="about">
+    <p style="font-size: 20px;"><strong>Departments</strong></p>
+    <ul>
+        <li style="font-size: 16px;line-height: 30px;">Mathematics</li>
+        <li style="font-size: 16px;line-height: 30px;">Chemistry</li>
+        <li style="font-size: 16px;line-height: 30px;">Physics</li>
+        <li style="font-size: 16px;line-height: 30px;">Civil Engineering</li>
+        <li style="font-size: 16px;line-height: 30px;">Computer Science & Engineering</li>
+        <li style="font-size: 16px;line-height: 30px;">Electrical & Electronics Engineering</li>
+        <li style="font-size: 16px;line-height: 30px;">Information Science & Engineering</li>
+        <li style="font-size: 16px;line-height: 30px;">Mechanical Engineering</li>
+        <li style="font-size: 16px;line-height: 30px;">Telecommunication Engineering</li>
+        <li style="font-size: 16px;line-height: 30px;">Artificial Intelligence & Machine Learning</li>
+        <li style="font-size: 16px;line-height: 30px;">Artificial Intelligence & Data Science</li>
+        <li style="font-size: 16px;line-height: 30px;">Masters Of Computer Applications</li>
+        <li style="font-size: 16px;line-height: 30px;">Masters Of Business Administration</li>
+        <li style="font-size: 16px;line-height: 30px;">Humanities</li>
+
+      </ul> 
+  </div>
+  
+
+   <div class="panel" id="contact" style="height: 350px;">
+    <p style="font-size: 20px;"><strong>Procedure For Application</strong></p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis cumque impedit cum! Pariatur facere iusto sequi numquam est deserunt, velit dolorum architecto enim placeat modi sed ea praesentium! Accusamus, perspiciatis!</p>
+
+    <a href="/basic" class="btn-next">Apply Now</a>
+  </div>
+
+  <div class="panel" id="posts" >
+    <p style="font-size: 20px;"> <strong>Eligibility Criteria For Teaching Post</strong></p>
+    <ul>
+        <li style="font-size: 16px;line-height: 30px;"><b>Assistant Professors:</b> The applicant should have a good academic record, relevant experience and an impressive record of research and publications. NET / SLET preferred. Required qualifications include BE / B Tech and ME / M Tech in the relevant subject with First Class or equivalent.</li><br>
+        <li style="font-size: 16px;line-height: 30px;"><b>Associate Professors:</b> Qualifications are the same as that for Assistant Professors. In addition, the applicant must have a Doctoral Degree from a reputed University with teaching / research / industry experience of 5 years or more</li><br>
+        <li style="font-size: 16px;line-height: 30px;"><b>Professors:</b> Qualifications are the same as that for Associate Professors. In addition, a minimum of 10 years teaching / research / industry experience is required, or which at least 5 years should be at the level of Associate Professor OR a minimum of 13 years experience in teaching / research / industry.</li><br>
+        <li style="font-size: 16px;line-height: 30px;"><b>Research Associate:</b> Research Associate in DST Water Technology Initiative Project.</li>
+      </ul> 
+
+      
+  </div>
+</div>
+<!--------------------------description tabs---------------------------------------------------->
+
+<footer class="footer">
+  <div class="footer-left col-md-4 col-sm-6">
+ 
+    <h3 style="color:white;position:relative;left:20px;">Subscribe for newsletter</h3>
+      <div id="subscribe-footer">
+       
+      <i class='icon-chevron-right'></i>
+      <div id="right">
+      <form action="https://feedburner.google.com/fb/a/mailverify" method="post" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=techkshetra', 'popupwindow',  'scrollbars=yes,width=550,height=520');return true" target="popupwindow">
+      <input class="inptfld" name="email" placeholder=" Your Email" type="text">
+      <input name="uri" value="techkshetra" type="hidden">
+      <input name="loc" value="en_US" type="hidden">
+      <input class="subscribebtn" value="Subscribe Now!" type="submit">
+        </form>
+      </div>
+    </div>
+    <br><br><br><br><br><br>
+
+   
+    <div class="icons">
+      <a href="https://www.facebook.com/CMRInstituteOfTechnologyBangalore/"><i class="fa fa-facebook"></i></a>
+      <a href="https://twitter.com/CMRIT_Bengaluru"><i class="fa fa-twitter"></i></a>
+      <a href="https://www.linkedin.com/school/cmr-institute-of-technology-bengaluru/"><i class="fa fa-linkedin"></i></a>
+      <a href="https://www.youtube.com/channel/UCpi96paEf16WS-Xf0_xyL9Q"><i class="fa fa-youtube-play"></i></a>
+      <a href="https://www.instagram.com/cmrit.bangalore/"><i class="fa fa-instagram"></i></a>
+    </div>
+  </div>
+  <div class="footer-center col-md-4 col-sm-6">
+    <div>
+      <i class="fa fa-map-marker"></i>
+      <p><span> CMR Institute of Technology,<br>132 AECS Layout,<br>ITPL Main Road, Kundalahalli<br>Bangalore 560037, India</span></p>
+    </div>
+    <br>
+    <div>
+      <i class="fa fa-phone"></i>
+      <p> (+91) 80 28524466 / 77</p>
+    </div>
+    <br>
+    <div>
+      <i class="fa fa-envelope"></i>
+      <p> info@cmrit.ac.in</p>
+    </div>
+  </div>
+  <div class="footer-right col-md-4 col-sm-6">
+    <img class="footer-img" src="{% static 'img/cmrit-white.png' %}">
+    <p class="menu" style="position: relative;bottom: 50px;right: 20px;">
+      <a href="#"> Home |</a> 
+      <a href="#" > Admin |</a> 
+      <a href="#" > Receptionist |</a> 
+      <a href="#" > Apply now |</a> 
+      <a href="#" >  Contact Us |</a> 
+      <a href="#"> FAQ</a>
+    </p>
+    
+  </div>
+  <footer style="color:lightgrey;background-color:#1a1a1a;height:8px;width: 1550px;text-align: center; font-family: sans-serif;font-size: 16px;padding:20px;position: relative;right:50px;bottom:10px;">Copyright © 2021 All Rights Reserved by CMRIT.</footer>
+</footer>
+
+</body>
+
+</html>
+
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", () => {
+  const tabs = document.querySelector(".tabs");
+  const lis = document.querySelectorAll(".tabs li");
+  const panels = document.querySelectorAll(".panel");
+
+  tabs.addEventListener("click", (e) => {
+    if (e.target.tagName == "LI") {
+      Array.from(lis).forEach((li) => {
+        li == e.target ? li.classList.add("active") : li.classList.remove("active");
+      });
+
+      let targetPanel = document.querySelector(e.target.dataset.target);
+      Array.from(panels).forEach((panel) => {
+        panel == targetPanel
+          ? panel.classList.add("active")
+          : panel.classList.remove("active");
+      });
+    }
+  });
+});
+
+</script>

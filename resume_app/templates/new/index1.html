@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+
+ 
+<script>
+      function ValidateFields() {
+          if (document.getElementById('post').value == "" && document.getElementById('dep').value == ""){
+            alert('Please select all the details');
+          document.getElementById('post').style.borderColor="red";
+          document.getElementById('dep').style.borderColor="red";
+          return false;}
+          else if (document.getElementById('pos').value == ""){
+            alert('Please select your Post');
+          document.getElementById('post').style.borderColor="red";
+          return false;}
+          else if (document.getElementById('dep').value == ""){
+            alert('Please enter your Department');
+          document.getElementById('dep').style.borderColor="red";
+          return false;}
+        return true;
+    }
+    </script>
+
+
+
+  </head>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+    
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #a4b7d1; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background: url("bg.png"), -webkit-linear-gradient(bottom,#F0FFFF,#B0C4DE);
+}
+::selection{
+  color: #fff;
+  background: #a4b7d1;
+}
+.align{
+  right: 500px;
+}
+.container{
+  width: 700px;
+  height: 100%;
+  background: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 50px 35px 10px 35px;
+}
+.container header{
+  font-size: 35px;
+  font-weight: 600;
+  margin: 0 0 30px 0;
+}
+.container .form-outer{
+  width: 100%;
+  overflow: hidden;
+}
+.container .form-outer form{
+  display: flex;
+  width: 400%;
+}
+.form-outer form .page{
+  width: 25%;
+  transition: margin-left 0.3s ease-in-out;
+}
+.form-outer form .page .title{
+  text-align: center;
+  font-size: 25px;
+  font-weight: 500;
+}
+.form-outer form .page .field{
+  width: 800px;
+  height: 45px;
+  margin: 45px 0;
+  
+  position: relative;
+}
+.form-outer form .page .field1{
+  width: 330px;
+  height: 45px;
+  margin: 45px 0;
+  display: flex;
+  position: relative;
+}
+form .page .field .label{
+
+  position: absolute;
+  top: 10px;
+  font-weight: 500;
+  font-size: 20px;
+  
+}
+form .page .field1 .label{
+
+  position: absolute;
+  top: -30px;
+  font-weight: 500;
+  
+}
+form .page .field input{
+
+  height: 100%;
+  width: 500px;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding-left: 15px;
+  font-size: 18px;
+
+
+}
+form .page .field select{
+  width: 100%;
+  padding-left: 10px;
+  font-size: 17px;
+  font-weight: 500;
+}
+form .page .field button{
+  width: 100%;
+  height: calc(100% + 5px);
+  border: none;
+  background: #a4b7d1;
+  margin-top: -20px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+}
+form .page .field button:hover{
+  background: #000;
+}
+.btn-next{
+  width: 1000px;
+  height: 100%;
+  border: none;
+  background: #a4b7d1;
+  margin-top: 0;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+  position: relative;
+  left: 140px;
+  bottom: 40px;
+  text-align: center;
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-decoration: none;
+  float: left;
+  border-collapse: separate;
+  border-spacing: 50px;
+}
+.btn-next:hover{
+  background: #000;
+}
+.btn-next1{
+  width: 1000px;
+  height: 100%;
+  border: none;
+  background: #a4b7d1;
+  margin-top: 0;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+  position: relative;
+  left: 180px;
+  bottom: 40px;
+  text-align: center;
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-decoration: none;
+  float: left;
+
+}
+.btn-next1:hover{
+  background: #000;
+}
+
+
+.btn-next2{
+  width: 1000px;
+  height: 100%;
+  border: none;
+  background: #a4b7d1;
+  margin-top: 0;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+  position: relative;
+  left: 100px;
+  bottom: 40px;
+  text-align: center;
+  padding-top: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
+  text-decoration: none;
+  float: left;
+}
+.btn-next2:hover{
+  background: #000;
+}
+
+
+
+
+
+
+
+
+
+
+.form-outer form .page .field2{
+  width: 600px;
+  height: 45px;
+  margin: 45px 0;
+  position: relative;
+}
+
+form .page .field2 .label{
+
+  position: absolute;
+  top: 10px;
+  font-weight: 500;
+  font-size: 20px;
+  
+}
+form .page .field2 input{
+
+  height: 100%;
+  width: 415px;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding-left: 15px;
+  font-size: 18px;
+  float: right;
+  position: relative;
+  left: 55px;
+}
+form .page .field2 select{
+  width: 100%;
+  padding-left: 10px;
+  font-size: 17px;
+  font-weight: 500;
+}
+form .page .field2 button{
+  width: 100%;
+  height: calc(100% + 5px);
+  border: none;
+  background: #a4b7d1;
+  margin-top: -20px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+}
+form .page .field2 button:hover{
+  background: #000;
+}
+
+
+
+
+
+
+
+
+
+form .page .field1 input{
+  height: 100%;
+  width: 500px;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding-left: 15px;
+  font-size: 18px;
+  position: relative;
+
+}
+form .page .field1 select{
+  width: 100%;
+  padding-left: 10px;
+  font-size: 17px;
+  font-weight: 500;
+}
+form .page .field1 button{
+  width: 100%;
+  height: calc(100% + 5px);
+  border: none;
+  background: #a4b7d1;
+  margin-top: -20px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+  position: relative;
+  right: -200px;
+}
+form .page .field1 button:hover{
+  background: #000;
+}
+form .page .btns button{
+  margin-top: -20px!important;
+}
+form .page .btns button.prev{
+  margin-right: 3px;
+  font-size: 17px;
+}
+form .page .btns button.next{
+  margin-left: 3px;
+}
+
+
+select{
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  font-color: #a4b7d1;
+}
+
+
+
+
+  </style>
+  {% load static %}
+  <body>
+    <img src="{% static "cmrit.png" %}" alt="" />
+    <div class="container">
+      <div class="form-outer">
+        
+        <form name = "form1" method="post" action="#" enctype="multipart/form-data">
+          
+          <div class="page slide-page">
+            <div class="page">
+              <div class="title"></div>
+              <div class="field1 btns">
+                 <a href="/login_admin" class="btn-next2">Admin</a>
+                 <a href="/login" class="btn-next" >Reception</a> 
+                 <a href="/basic" class="btn-next1" onclick="">Candidate</a>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+<script src="script.js"></script>
+<script type="text/javascript">
+const slidePage = document.querySelector(".slide-page");
+const nextBtnFirst = document.querySelector(".firstNext");
+const prevBtnSec = document.querySelector(".prev-1");
+const nextBtnSec = document.querySelector(".next-1");
+const prevBtnThird = document.querySelector(".prev-2");
+const nextBtnThird = document.querySelector(".next-2");
+const prevBtnFourth = document.querySelector(".prev-3");
+const submitBtn = document.querySelector(".submit");
+const progressText = document.querySelectorAll(".step p");
+const progressCheck = document.querySelectorAll(".step .check");
+const bullet = document.querySelectorAll(".step .bullet");
+let current = 1;
+nextBtnFirst.addEventListener("click", function(event){
+  event.preventDefault();
+  slidePage.style.marginLeft = "-25%";
+  bullet[current - 1].classList.add("active");
+  progressCheck[current - 1].classList.add("active");
+  progressText[current - 1].classList.add("active");
+  current += 1;
+});
+nextBtnSec.addEventListener("click", function(event){
+  event.preventDefault();
+  slidePage.style.marginLeft = "-50%";
+  bullet[current - 1].classList.add("active");
+  progressCheck[current - 1].classList.add("active");
+  progressText[current - 1].classList.add("active");
+  current += 1;
+});
+nextBtnThird.addEventListener("click", function(event){
+  event.preventDefault();
+  slidePage.style.marginLeft = "-75%";
+  bullet[current - 1].classList.add("active");
+  progressCheck[current - 1].classList.add("active");
+  progressText[current - 1].classList.add("active");
+  current += 1;
+});
+submitBtn.addEventListener("click", function(){
+  bullet[current - 1].classList.add("active");
+  progressCheck[current - 1].classList.add("active");
+  progressText[current - 1].classList.add("active");
+  current += 1;
+  setTimeout(function(){
+    alert("Your Form Successfully Signed up");
+    location.reload();
+  },800);
+});
+prevBtnSec.addEventListener("click", function(event){
+  event.preventDefault();
+  slidePage.style.marginLeft = "0%";
+  bullet[current - 2].classList.remove("active");
+  progressCheck[current - 2].classList.remove("active");
+  progressText[current - 2].classList.remove("active");
+  current -= 1;
+});
+prevBtnThird.addEventListener("click", function(event){
+  event.preventDefault();
+  slidePage.style.marginLeft = "-25%";
+  bullet[current - 2].classList.remove("active");
+  progressCheck[current - 2].classList.remove("active");
+  progressText[current - 2].classList.remove("active");
+  current -= 1;
+});
+prevBtnFourth.addEventListener("click", function(event){
+  event.preventDefault();
+  slidePage.style.marginLeft = "-50%";
+  bullet[current - 2].classList.remove("active");
+  progressCheck[current - 2].classList.remove("active");
+  progressText[current - 2].classList.remove("active");
+  current -= 1;
+});
+</script>
+
+</body>
+</html>
