@@ -10,13 +10,19 @@ Step 1: Clone the repo
 git clone https://github.com/Shivani-mv/ResumeAI.git
 ```
 
-Step 2: `cd` into the directory you just cloned and install the dependencies
+Step 2: `cd` into the directory you just cloned, create a virtual env and activate it
 ```
 cd ResumeAI
+python -m venv env
+source ./env/bin/activate
+```
+
+Step 3: install the dependencies
+```
 pip install -r requirements.txt
 ```
 
-Step 3: Run the django server
+Step 4: Run the django server
 ```
 python manage.py runserver
 ```
