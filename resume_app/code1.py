@@ -7,7 +7,7 @@
 #for the Apache tika to work set up the enviornment with latest jdk version
 #!pip install nltk
 #!pip install glob
-#!pip install tika==1.23    
+#!pip install tika==1.23
 
 
 # In[14]:
@@ -45,8 +45,6 @@ finalData=[]
 # In[15]:
 
 def motherFunc(path):
-
-
     def clean_resume(data):
         df = data['content'].upper().splitlines()
         df2 = [x.strip() for x in df]
@@ -56,7 +54,7 @@ def motherFunc(path):
 
 # In[16]:
     print('Already Started')
-
+    print("PATH:" + path)
     raw_data = parser.from_file(path)
 
     cdf = clean_resume(raw_data)
@@ -175,23 +173,25 @@ def motherFunc(path):
             return "REFERENCE"
         if re.match(r'(?=.*\bDECLARATION\b)', line):
             return "DECLARATION"
+        return ""
 
 
     # In[21]:
 
 
-    #using the current line to produce key and con-current lines to produce the section & store in the value of the key 
+    #using the current line to produce key and con-current lines to produce the section & store in the value of the key
     def formdict(key, line_num):
         key = extract_key(key)
         s = []
-        while line_num < len(cdf):
-            if match_line(cdf[line_num]):
-                info[key] = s; 
-                break
-            else :
-                s.append(cdf[line_num])
-                line_num = line_num + 1
-        return line_num
+        if key != "":
+            while line_num < len(cdf):
+                if match_line(cdf[line_num]):
+                    info[key] = s;
+                    break
+                else :
+                    s.append(cdf[line_num])
+                    line_num = line_num + 1
+            return line_num
 
 
     # In[22]:
@@ -223,10 +223,10 @@ def motherFunc(path):
     #extracting the nearest floating number but if any other key is present it return none
     def extract_marks(i, l2):
         ekey = [
-                'BE','B.E.', 'B.E', 'BS', 'B.SC', 
-                'ME', 'M.E', 'M.E.', 'MS', 'M.SC', 
+                'BE','B.E.', 'B.E', 'BS', 'B.SC',
+                'ME', 'M.E', 'M.E.', 'MS', 'M.SC',
                 'B.COM', 'B. TECH', 'M.TECH', 'MTECH',
-                'PH.D', 'M.COM', 'BA', 'ICSE', 'X', 'XII', 
+                'PH.D', 'M.COM', 'BA', 'ICSE', 'X', 'XII',
                 'SSC', 'HSC', 'CBSE', 'SECONDARY'
             ]
         for ele in range(i, len(l2)):
@@ -252,7 +252,7 @@ def motherFunc(path):
                 'bachelors':'',
                 'masters':'',
                 'phd':''}
-        
+
         l1 = word_tokenize(' '.join(education))
         l2 = [x for x in l1 if x != ',' if x!= '%' if x != '(' if x != ')' if x != '&' if x != '.']
         for i in range(0, len(l2)):
@@ -311,7 +311,7 @@ def motherFunc(path):
 
     #getting the pre-defined dataset of skills
     #converting them all to upper case for easier processing
-    skill_df = pd.read_csv(r"C://django//resume//skillset.csv")
+    skill_df = pd.read_csv(r"/Users/arpanabhishek/projects/ResumeAI/skillset.csv")
     skill_df = skill_df.applymap(lambda s:s.upper() if type(s) == str else s)
 
 
@@ -352,10 +352,3 @@ def motherFunc(path):
     finalData.append(info)
     print(finalData)
     return finalData
-
-
-    
-
-
-
-

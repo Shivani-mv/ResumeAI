@@ -19,6 +19,7 @@ from subprocess import run,PIPE
 import sys
 
 
+doc_url = ""
 
 def basic(request):
 	return render(request,'basic.html')
@@ -26,7 +27,7 @@ def basic(request):
 def basic_info(request):
 	return render(request,'basic_info.html')
 
-def select_post(request):	
+def select_post(request):
 	return render(request,'select_post.html')
 
 def index(request):
@@ -36,8 +37,8 @@ def login(request):
 	return render(request, 'login.html')
 
 def login_admin(request):
-		return render(request, 'login_admin.html')       
-           
+		return render(request, 'login_admin.html')
+
 def candidate(request):
 	return render(request, 'candidate.html')
 
@@ -50,7 +51,7 @@ def upload_cv(request):
 	if request.method == 'POST':
 		form = DocumentForm(request.POST, request.FILES)
 		if form.is_valid():
-			form.save() 
+			form.save()
 	else:
 		form = DocumentForm()
 		if 'submitted' in request.GET:
@@ -62,11 +63,11 @@ def technical_info(request):
 		form = technicalForm(request.POST)
 		if form.is_valid():
 			form.save()
-	else:	
+	else:
 		print(doc_url)
 		datas=motherFunc(doc_url)
 		print(datas)
-		joined_skill=', '.join(datas[1])	
+		joined_skill=', '.join(datas[1])
 		marks10=datas[0]['secondary']
 		marks12=datas[0]['sr.secondary']
 		ugperc=datas[0]['bachelors'].split(',')
@@ -75,7 +76,7 @@ def technical_info(request):
 		intFormatted=', '.join(interest)
 		phd=datas[0]['phd']
 		print(marks10)
-				
+
 		data = {
 			'perc_10':marks10,
 			'perc_12':marks12,
@@ -128,4 +129,3 @@ def url(request):
 	json_data=json.loads(request.body)
 	allvideos= Document.objects.all()
 	context= {'allvideos': allvideos}
-

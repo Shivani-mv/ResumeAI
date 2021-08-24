@@ -1,715 +1,844 @@
 <html>
-<head>
-  
-  {% load static %}
+  <head>
+    {% load static %}
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <title>Basic Info</title>
-<style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Basic Info</title>
+    <style>
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
 
-::-webkit-scrollbar {
-  width: 10px;
-}
+      /* Track */
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
 
-/* Track */
-::-webkit-scrollbar-track {
-  background: #f1f1f1; 
-}
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #fff; 
-}
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: #fff;
+      }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555; 
-}
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
 
-body{
-  overflow-x: hidden;
-  background-color: #fff;
-}
-::selection{
-  color: #fff;
-  background: #a4b7d1;
-}
-.align{
-  right: 500px;
-}
-.container{
-  width: 700px;
-  height: 550px;
-  background: #fff;
-  text-align: center;
-  border-radius: 25px;
-  padding: 0px 35px 10px 35px;
-  position: relative;
-  left:400px;
-  bottom: 50px;
+      body {
+        overflow-x: hidden;
+        background-color: #fff;
+      }
+      ::selection {
+        color: #fff;
+        background: #a4b7d1;
+      }
+      .align {
+        right: 500px;
+      }
+      .container {
+        width: 700px;
+        height: 550px;
+        background: #fff;
+        text-align: center;
+        border-radius: 25px;
+        padding: 0px 35px 10px 35px;
+        position: relative;
+        left: 400px;
+        bottom: 50px;
+      }
+      .container header {
+        font-size: 35px;
+        font-weight: 600;
+        margin: 0 0 30px 0;
+      }
+      .container .form-outer {
+        width: 100%;
+        overflow: hidden;
+      }
+      .container .form-outer form {
+        display: flex;
+        width: 400%;
+      }
+      .form-outer form .page {
+        width: 25%;
+        transition: margin-left 0.3s ease-in-out;
+      }
+      .form-outer form .page .title {
+        text-align: center;
+        font-size: 25px;
+        font-weight: 500;
+      }
+      .form-outer form .page .field {
+        width: 800px;
+        height: 45px;
+        margin: 45px 0;
 
-}
-.container header{
-  font-size: 35px;
-  font-weight: 600;
-  margin: 0 0 30px 0;
-}
-.container .form-outer{
-  width: 100%;
-  overflow: hidden;
-}
-.container .form-outer form{
-  display: flex;
-  width: 400%;
-}
-.form-outer form .page{
-  width: 25%;
-  transition: margin-left 0.3s ease-in-out;
-}
-.form-outer form .page .title{
-  text-align: center;
-  font-size: 25px;
-  font-weight: 500;
-}
-.form-outer form .page .field{
-  width: 800px;
-  height: 45px;
-  margin: 45px 0;
-  
-  position: relative;
-}
-.form-outer form .page .field1{
-  width: 330px;
-  height: 45px;
-  margin: 45px 0;
-  display: flex;
-  position: relative;
-}
-form .page .field .label{
-  position: absolute;
-  top: 10px;
-  font-weight: 500;
-  font-size: 20px; 
-}
-form .page .field1 .label{
-  position: absolute;
-  top: -30px;
-  font-weight: 500;
-}
-form .page .field input{
-  height: 100%;
-  width: 500px;
-  border: 1px solid lightgrey;
-  border-radius: 5px;
-  padding-left: 15px;
-  font-size: 18px;
-}
-form .page .field select{
-  width: 100%;
-  padding-left: 10px;
-  font-size: 17px;
-  font-weight: 500;
-}
-form .page .field button{
-  width: 100%;
-  height: calc(100% + 5px);
-  border: none;
-  background: #000;
-  margin-top: -20px;
-  border-radius: 5px;
-  color: #fff;
-  cursor: pointer;
-  font-size: 18px;
-  font-weight: 500;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  transition: 0.5s ease;
-}
-form .page .field button:hover{
-  background: #000;
-}
+        position: relative;
+      }
+      .form-outer form .page .field1 {
+        width: 330px;
+        height: 45px;
+        margin: 45px 0;
+        display: flex;
+        position: relative;
+      }
+      form .page .field .label {
+        position: absolute;
+        top: 10px;
+        font-weight: 500;
+        font-size: 20px;
+      }
+      form .page .field1 .label {
+        position: absolute;
+        top: -30px;
+        font-weight: 500;
+      }
+      form .page .field input {
+        height: 100%;
+        width: 500px;
+        border: 1px solid lightgrey;
+        border-radius: 5px;
+        padding-left: 15px;
+        font-size: 18px;
+      }
+      form .page .field select {
+        width: 100%;
+        padding-left: 10px;
+        font-size: 17px;
+        font-weight: 500;
+      }
+      form .page .field button {
+        width: 100%;
+        height: calc(100% + 5px);
+        border: none;
+        background: #000;
+        margin-top: -20px;
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        transition: 0.5s ease;
+      }
+      form .page .field button:hover {
+        background: #000;
+      }
 
-.btn-next1{
-  width: 25%;
-  border: none;
-  background: #000;
-  margin-top: 0;
-  border-radius: 5px;
-  color: #fff;
-  cursor: pointer;
-  font-size: 18px;
-  font-weight: 500;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  transition: 0.5s ease;
-  position: relative;
-  left: 300px;
-  top: 120px;
-  text-align: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  text-decoration: none;
-  float: left;
+      .btn-next1 {
+        width: 25%;
+        border: none;
+        background: #000;
+        margin-top: 0;
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        transition: 0.5s ease;
+        position: relative;
+        left: 300px;
+        top: 120px;
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        text-decoration: none;
+        float: left;
+      }
+      .btn-next1:hover {
+        background: #000;
+      }
 
-}
-.btn-next1:hover{
-  background: #000;
-}
+      .form-outer form .page .field2 {
+        width: 600px;
+        height: 45px;
+        margin: 45px 0;
+        position: relative;
+      }
 
-.form-outer form .page .field2{
-  width: 600px;
-  height: 45px;
-  margin: 45px 0;
-  position: relative;
-}
+      form .page .field2 .label {
+        position: absolute;
+        top: 10px;
+        font-weight: 500;
+        font-size: 20px;
+      }
+      form .page .field2 input {
+        height: 100%;
+        width: 415px;
+        border: 1px solid lightgrey;
+        border-radius: 5px;
+        padding-left: 15px;
+        font-size: 18px;
+        float: right;
+        position: relative;
+        left: 55px;
+      }
+      form .page .field2 select {
+        width: 100%;
+        padding-left: 10px;
+        font-size: 17px;
+        font-weight: 500;
+      }
+      form .page .field2 button {
+        width: 100%;
+        height: calc(100% + 5px);
+        border: none;
+        background: #a4b7d1;
+        margin-top: -20px;
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        transition: 0.5s ease;
+      }
+      form .page .field2 button:hover {
+        background: #000;
+      }
+      form .page .field1 input {
+        height: 100%;
+        width: 500px;
+        border: 1px solid lightgrey;
+        border-radius: 5px;
+        padding-left: 15px;
+        font-size: 18px;
+        position: relative;
+      }
+      form .page .field1 select {
+        width: 100%;
+        padding-left: 10px;
+        font-size: 17px;
+        font-weight: 500;
+      }
+      form .page .field1 button {
+        width: 100%;
+        height: calc(100% + 5px);
+        border: none;
+        background: #a4b7d1;
+        margin-top: -20px;
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        transition: 0.5s ease;
+        position: relative;
+        right: -200px;
+      }
+      form .page .field1 button:hover {
+        background: #000;
+      }
+      form .page .btns button {
+        margin-top: -20px !important;
+      }
+      form .page .btns button.prev {
+        margin-right: 3px;
+        font-size: 17px;
+      }
+      form .page .btns button.next {
+        margin-left: 3px;
+      }
+      .dropdown1 {
+        position: relative;
+        left: 120px;
+        height: 100%;
+        width: 530px;
+        border-radius: 50px;
+        padding-left: 15px;
+        font-size: 18px;
+        display: flex;
+      }
+      select {
+        border: 1px solid lightgrey;
+        border-radius: 5px;
+        color: #a4b7d1;
+      }
 
-form .page .field2 .label{
+      .dropdown2 {
+        position: relative;
+        left: 130px;
+        height: 100%;
+        width: 70px;
+        border-radius: 50px;
+        padding-left: 15px;
+        font-size: 18px;
+        display: inline-flex;
+        float: left;
+      }
+      .dropdown3 {
+        position: relative;
+        left: 190px;
+        height: 100%;
+        width: 465px;
+        border-radius: 50px;
+        padding-left: 15px;
+        font-size: 18px;
+        display: inline-flex;
+        float: left;
+      }
+      .required {
+        color: red;
+      }
+      header {
+        background-color: #000;
+        height: 120px;
+        position: relative;
+        bottom: 8px;
+        left: -10px;
+        width: 100000px;
+      }
 
-  position: absolute;
-  top: 10px;
-  font-weight: 500;
-  font-size: 20px;
-  
-}
-form .page .field2 input{
+      .footer {
+        background-color: #000;
+        width: 1550px;
+        text-align: left;
+        font-family: sans-serif;
+        font-weight: bold;
+        font-size: 16px;
+        padding: 50px;
+        margin-top: 50px;
+        position: relative;
+        right: 10px;
+        top: 20px;
+        height: 250px;
+      }
 
-  height: 100%;
-  width: 415px;
-  border: 1px solid lightgrey;
-  border-radius: 5px;
-  padding-left: 15px;
-  font-size: 18px;
-  float: right;
-  position: relative;
-  left: 55px;
-}
-form .page .field2 select{
-  width: 100%;
-  padding-left: 10px;
-  font-size: 17px;
-  font-weight: 500;
-}
-form .page .field2 button{
-  width: 100%;
-  height: calc(100% + 5px);
-  border: none;
-  background: #a4b7d1;
-  margin-top: -20px;
-  border-radius: 5px;
-  color: #fff;
-  cursor: pointer;
-  font-size: 18px;
-  font-weight: 500;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  transition: 0.5s ease;
-}
-form .page .field2 button:hover{
-  background: #000;
-}
-form .page .field1 input{
-  height: 100%;
-  width: 500px;
-  border: 1px solid lightgrey;
-  border-radius: 5px;
-  padding-left: 15px;
-  font-size: 18px;
-  position: relative;
-}
-form .page .field1 select{
-  width: 100%;
-  padding-left: 10px;
-  font-size: 17px;
-  font-weight: 500;
-}
-form .page .field1 button{
-  width: 100%;
-  height: calc(100% + 5px);
-  border: none;
-  background: #a4b7d1;
-  margin-top: -20px;
-  border-radius: 5px;
-  color: #fff;
-  cursor: pointer;
-  font-size: 18px;
-  font-weight: 500;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  transition: 0.5s ease;
-  position: relative;
-  right: -200px;
-}
-form .page .field1 button:hover{
-  background: #000;
-}
-form .page .btns button{
-  margin-top: -20px!important;
-}
-form .page .btns button.prev{
-  margin-right: 3px;
-  font-size: 17px;
-}
-form .page .btns button.next{
-  margin-left: 3px;
-}
-.dropdown1{
-  position: relative;
-  left: 120px;
-  height: 100%;
-  width: 530px;
-  border-radius: 50px;
-  padding-left: 15px;
-  font-size: 18px;
-  display: flex;
+      .footer .footer-left,
+      .footer .footer-center,
+      .footer .footer-right {
+        display: inline-block;
+        vertical-align: top;
+      }
 
-}
-select{
-  border: 1px solid lightgrey;
-  border-radius: 5px;
-  color: #a4b7d1;
-}
+      /* footer left*/
 
-.dropdown2{
-  position: relative;
-  left: 130px;
-  height: 100%;
-  width: 70px;
-  border-radius: 50px;
-  padding-left: 15px;
-  font-size: 18px;
-  display:inline-flex;
-  float: left;
+      .footer .footer-left {
+        width: 33%;
+        padding-right: 15px;
+      }
 
-}
-.dropdown3{
-  position: relative;
-  left: 190px;
-  height: 100%;
-  width: 465px;
-  border-radius: 50px;
-  padding-left: 15px;
-  font-size: 18px;
-  display:inline-flex;
-  float: left;
+      .footer .about {
+        line-height: 20px;
+        color: #ffffff;
+        font-size: 13px;
+        font-weight: normal;
+        margin: 0;
+      }
 
-}
-.required {
-  color: red;
-}
-header {
-  background-color: #000;
-  height: 120px;
-  position: relative;
-  bottom: 8px;
-  left:-10px;
-  width: 100000px;
-}
+      .footer .about span {
+        display: block;
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
 
-.footer {
-  background-color: #000;
-  width: 1550px;
-  text-align: left;
-  font-family: sans-serif;
-  font-weight: bold;
-  font-size: 16px;
-  padding: 50px;
-  margin-top: 50px;
-  position: relative;
-  right: 10px;
-  top:20px;
-  height: 250px;
-}
+      .footer .icons {
+        margin-top: 25px;
+        position: relative;
+        left: 100px;
+      }
 
-.footer .footer-left,
-.footer .footer-center,
-.footer .footer-right {
-  display: inline-block;
-  vertical-align: top;
-}
+      .footer .icons a {
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+        background-color: #33383b;
+        border-radius: 2px;
+        font-size: 20px;
+        color: #ffffff;
+        text-align: center;
+        line-height: 35px;
+        margin-right: 3px;
+        margin-bottom: 5px;
+      }
 
+      /* footer center*/
 
-/* footer left*/
+      .footer .footer-center {
+        width: 30%;
+      }
 
-.footer .footer-left {
-  width: 33%;
-  padding-right: 15px;
-}
+      .footer .footer-center i {
+        background-color: #33383b;
+        color: #ffffff;
+        font-size: 25px;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 42px;
+        margin: 10px 15px;
+        vertical-align: middle;
+      }
 
-.footer .about {
-  line-height: 20px;
-  color: #ffffff;
-  font-size: 13px;
-  font-weight: normal;
-  margin: 0;
-}
+      .footer .footer-center i.fa-envelope {
+        font-size: 17px;
+        line-height: 38px;
+      }
 
-.footer .about span {
-  display: block;
-  color: #ffffff;
-  font-size: 14px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
+      .footer .footer-center p {
+        display: inline-block;
+        color: #ffffff;
+        vertical-align: middle;
+        margin: 0;
+      }
 
-.footer .icons {
-  margin-top: 25px;
-  position: relative;
-  left: 100px;
-}
+      .footer .footer-center p span {
+        display: block;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 2;
+      }
 
-.footer .icons a {
-  display: inline-block;
-  width: 35px;
-  height: 35px;
-  cursor: pointer;
-  background-color: #33383b;
-  border-radius: 2px;
-  font-size: 20px;
-  color: #ffffff;
-  text-align: center;
-  line-height: 35px;
-  margin-right: 3px;
-  margin-bottom: 5px;
-}
+      .footer .footer-center p a {
+        color: #0099ff;
+        text-decoration: none;
+      }
 
+      /* footer right*/
 
-/* footer center*/
+      .footer .footer-right {
+        width: 35%;
+      }
 
-.footer .footer-center {
-  width: 30%;
-}
+      .footer h2 {
+        color: #ffffff;
+        font-size: 36px;
+        font-weight: normal;
+        margin: 0;
+      }
 
-.footer .footer-center i {
-  background-color: #33383b;
-  color: #ffffff;
-  font-size: 25px;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 42px;
-  margin: 10px 15px;
-  vertical-align: middle;
-}
+      .footer h2 span {
+        color: #0099ff;
+      }
 
-.footer .footer-center i.fa-envelope {
-  font-size: 17px;
-  line-height: 38px;
-}
+      .footer .menu {
+        color: #ffffff;
+        margin: 20px 0 12px;
+        padding: 0;
+      }
 
-.footer .footer-center p {
-  display: inline-block;
-  color: #ffffff;
-  vertical-align: middle;
-  margin: 0;
-}
+      .footer .menu a {
+        display: inline-block;
+        line-height: 1.8;
+        text-decoration: none;
+        color: inherit;
+      }
 
-.footer .footer-center p span {
-  display: block;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 2;
-}
+      .footer .menu a:hover {
+        color: gray;
+      }
 
-.footer .footer-center p a {
-  color: #0099ff;
-  text-decoration: none;
-}
+      .footer .name {
+        color: gray;
+        font-size: 14px;
+        font-weight: normal;
+        margin: 0;
+      }
 
+      @media (max-width: 767px) {
+        .footer {
+          font-size: 14px;
+        }
+        .footer .footer-left,
+        .footer .footer-center,
+        .footer .footer-right {
+          display: block;
+          width: 100%;
+          margin-bottom: 40px;
+          text-align: center;
+        }
+        .footer .footer-center i {
+          margin-left: 0;
+        }
+      }
+      .footer-img {
+        height: 240px;
+        width: 250px;
+        position: relative;
+        bottom: 20px;
+        left: 50px;
+      }
+      .icons a:hover {
+        background-color: #808080;
+        transform: scale(1.2);
+        transition: all 0.3s ease;
+      }
 
-/* footer right*/
+      .card {
+        cursor: pointer;
+        margin: 50px;
+        border-radius: 3px;
+        perspective: 1000px;
+        position: relative;
+        left: 0px;
+        bottom: 150px;
+      }
 
-.footer .footer-right {
-  width: 35%;
-}
+      .card__inner {
+        background-color: #f6f4f1;
+        color: #000000;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+          rgba(0, 0, 0, 0.22) 0px 10px 10px;
+        border-radius: 50px;
+        height: 400px;
+        width: 350px;
 
-.footer h2 {
-  color: #ffffff;
-  font-size: 36px;
-  font-weight: normal;
-  margin: 0;
-}
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-.footer h2 span {
-  color: #0099ff;
-}
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+      }
 
-.footer .menu {
-  color: #ffffff;
-  margin: 20px 0 12px;
-  padding: 0;
-}
+      .card:hover .card__inner {
+        transform: rotateY(180deg);
+      }
 
-.footer .menu a {
-  display: inline-block;
-  line-height: 1.8;
-  text-decoration: none;
-  color: inherit;
-}
+      .card__content {
+        position: absolute;
+        -webkit-backface-visibility: hidden; /* Safari */
+        backface-visibility: hidden;
+      }
 
-.footer .menu a:hover {
-  color: gray;
-}
+      .card__content--back {
+        transform: rotateY(180deg);
+      }
 
-.footer .name {
-  color: gray;
-  font-size: 14px;
-  font-weight: normal;
-  margin: 0;
-}
+      /*----------------------------*/
+      .card1 {
+        cursor: pointer;
+        margin: 50px;
+        border-radius: 3px;
+        perspective: 1000px;
+        position: relative;
+        left: 400px;
+        bottom: 600px;
+      }
 
-@media (max-width: 767px) {
-  .footer {
-    font-size: 14px;
-  }
-  .footer .footer-left,
-  .footer .footer-center,
-  .footer .footer-right {
-    display: block;
-    width: 100%;
-    margin-bottom: 40px;
-    text-align: center;
-  }
-  .footer .footer-center i {
-    margin-left: 0;
-  }
-}
-.footer-img {
-	height: 240px;
-  	width: 250px;
-  	position: relative;
-  	bottom: 20px;
-  	left: 50px;
-}
-.icons a:hover  {
-	background-color: #808080;
-  transform: scale(1.2);
-  transition: all 0.3s ease;
-}
+      .card__inner1 {
+        background-color: #f6f4f1;
+        color: #000000;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+          rgba(0, 0, 0, 0.22) 0px 10px 10px;
+        height: 400px;
+        width: 350px;
+        border-radius: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+      }
 
-.card {
-    cursor: pointer;
-    margin: 50px;
-    border-radius: 3px;
-    perspective: 1000px;
-    position: relative;
-    left: 0px;
-    bottom: 150px;  
-}
+      .card1:hover .card__inner1 {
+        transform: rotateY(180deg);
+      }
 
-.card__inner {
-    background-color: #f6f4f1;
-    color: #000000;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
-    border-radius: 50px;
-    height: 400px;
-    width: 350px;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-}
+      .card__content1 {
+        position: absolute;
+        -webkit-backface-visibility: hidden; /* Safari */
+        backface-visibility: hidden;
+      }
 
-.card:hover .card__inner {
-    transform: rotateY(180deg);
-}
+      .card__content--back1 {
+        transform: rotateY(180deg);
+      }
+      #subscribe-footer i.icon-chevron-right {
+        color: #2980b9;
+        font-size: 97px;
+        z-index: -999;
+      }
+      #subscribe-footer form {
+        float: right;
+        margin: 28px;
+      }
+      #subscribe-footer form .inptfld {
+        font-family: Open Sans;
+        outline: medium none;
+        border: medium none;
+        font-size: 15px;
+        padding: 10px;
+        border-radius: 3px;
+        width: 250px;
+        position: relative;
+        right: 70px;
+      }
+      #subscribe-footer form .subscribebtn {
+        outline: none;
+        border: none;
+        padding: 10px;
+        border-radius: 3px;
+        color: #fff;
+        background: #1a1a1a;
+        cursor: pointer;
+        margin-left: 10px;
+        position: relative;
+        right: 70px;
+      }
+      #subscribe-footer form .subscribebtn:hover {
+        background: gray;
+        -webkit-transition: all 0.6s ease 0;
+        -moz-transition: all 0.6s ease;
+        -ms-transition: all 0.6s ease 0;
+        -o-transition: all 0.6s ease 0;
+        transition: all 0.6s ease 0;
+      }
+      #box {
+        width: 750px;
+        height: 100%;
+        background-color: #fcfcfc;
+        box-shadow: 5px 5px 15px 5px #aaa;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        padding-bottom: 0px;
+        border-radius: 15px;
+        position: relative;
+        left: 380px;
+        top: 70px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <p
+        style="
+          position: relative;
+          right: -480px;
+          top: 30px;
+          color: white;
+          font-size: 40px;
+        "
+      >
+        CMR INSTITUTE OF TECHNOLOGY
+      </p>
+      <img
+        src="{% static 'img/cmrit-white.png' %}"
+        style="
+          width: 180px;
+          height: 180px;
+          position: relative;
+          bottom: 120px;
+          margin-left: 20px;
+        "
+      />
+    </header>
 
-.card__content {
-    position: absolute;
-    -webkit-backface-visibility: hidden; /* Safari */
-    backface-visibility: hidden;
-}
-
-.card__content--back {
-  transform: rotateY(180deg);
-} 
-
-/*----------------------------*/
-.card1 {
-    cursor: pointer;
-    margin: 50px;
-    border-radius: 3px;
-    perspective: 1000px;
-    position: relative;
-    left: 400px;
-    bottom: 600px;
-}
-
-.card__inner1 {
-    background-color: #f6f4f1;
-    color: #000000;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
-    height: 400px;
-    width: 350px;
-    border-radius: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-}
-
-.card1:hover .card__inner1 {
-    transform: rotateY(180deg);
-}
-
-.card__content1 {
-    position: absolute;
-    -webkit-backface-visibility: hidden; /* Safari */
-    backface-visibility: hidden;
-}
-
-.card__content--back1 {
-  transform: rotateY(180deg);
-} 
-#subscribe-footer i.icon-chevron-right{
-	color:#2980B9;
-  font-size:97px;
-  z-index:-999;
-}
-#subscribe-footer form {
-    float: right;
-    margin: 28px;
-}
-#subscribe-footer form .inptfld {
-    font-family: Open Sans;
-    outline: medium none;
-    border: medium none;
-    font-size: 15px;
-    padding: 10px;
-    border-radius: 3px;
-    width: 250px;
-    position:relative;
-    right: 70px;
-}
-#subscribe-footer form .subscribebtn {
-outline: none;
-border: none;
-padding: 10px;
-border-radius: 3px;
-color: #fff;
-background: #1a1a1a;
-cursor: pointer;
-margin-left: 10px;
-position: relative;
-right: 70px;
-}
-#subscribe-footer form .subscribebtn:hover {
-background: gray;
--webkit-transition: all .6s ease 0;
--moz-transition: all .6s ease;
--ms-transition: all .6s ease 0;
--o-transition: all .6s ease 0;
-transition: all .6s ease 0;
-}
-#box {
-  width: 750px;
-  height: 100%;
-  background-color: #fcfcfc;
-  box-shadow: 5px 5px 15px 5px #aaa;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  padding-bottom: 0px;
-  border-radius: 15px;
-  position: relative;
-  left: 380px;
-  top: 70px;
-}
-
-</style>
-</head>
-<body>
-  <header>
-    <p style="position:relative;right:-480px;top:30px;color: white;font-size: 40px;">CMR INSTITUTE OF TECHNOLOGY</p>
-    <img src="{% static 'img/cmrit-white.png' %}" style="width:180px;height:180px;position:relative;bottom:120px;margin-left: 20px;">
-  </header>
-  
     <div id="box">
-      <h1 style="position: relative;left:260px;top:40px;">ADMIN LOGIN</h1>
-       <form action="" enctype="multipart/form-data" method="POST">
+      <h1 style="position: relative; left: 260px; top: 40px">ADMIN LOGIN</h1>
+      <form action="" enctype="multipart/form-data" method="POST">
         <div class="form-group">
-          <p style="color:#000;font-size:20px;font-weight:500;position: relative;top:120px;left:100px;font-family: 'Poppins', sans-serif;">Username :<span class="required">*</span></p>
+          <p
+            style="
+              color: #000;
+              font-size: 20px;
+              font-weight: 500;
+              position: relative;
+              top: 120px;
+              left: 100px;
+              font-family: 'Poppins', sans-serif;
+            "
+          >
+            Username :<span class="required">*</span>
+          </p>
         </div>
         <div class="field">
-          <input style="font-size:20px;border-radius:5px;border-width:thin;padding-left:50px;width:400px;height: 45px;position: relative;left:250px;top:65px;border: 1px solid lightgrey;" type="text" id="name" placeholder="Username">
-          <i class="fa fa-user" style="position: relative;top:68px;right:136px;font-size: 25px;color: gray;"></i>  
+          <input
+            style="
+              font-size: 20px;
+              border-radius: 5px;
+              border-width: thin;
+              padding-left: 50px;
+              width: 400px;
+              height: 45px;
+              position: relative;
+              left: 250px;
+              top: 65px;
+              border: 1px solid lightgrey;
+            "
+            type="text"
+            id="name"
+            placeholder="Username"
+          />
+          <i
+            class="fa fa-user"
+            style="
+              position: relative;
+              top: 68px;
+              right: 136px;
+              font-size: 25px;
+              color: gray;
+            "
+          ></i>
         </div>
-      
+
         <div class="form-group">
-          <p style="font-size:20px;font-weight:500;position: relative;top:120px;left:100px;font-family: 'Poppins', sans-serif;">Password : <span class="required">*</span></p>
+          <p
+            style="
+              font-size: 20px;
+              font-weight: 500;
+              position: relative;
+              top: 120px;
+              left: 100px;
+              font-family: 'Poppins', sans-serif;
+            "
+          >
+            Password : <span class="required">*</span>
+          </p>
         </div>
         <div class="field">
-        <input style="color:grey;font-size:20px;border-radius:5px;border-width:thin;padding-left:50px;width: 400px;height: 45px;position: relative;left:250px;top:65px;border: 1px solid lightgrey;" type="text" id="phno" placeholder="Password">
-        <i class="fa fa-lock" style="position: relative;top:68px;right:136px;font-size: 25px;color: gray;"></i>  
+          <input
+            style="
+              color: grey;
+              font-size: 20px;
+              border-radius: 5px;
+              border-width: thin;
+              padding-left: 50px;
+              width: 400px;
+              height: 45px;
+              position: relative;
+              left: 250px;
+              top: 65px;
+              border: 1px solid lightgrey;
+            "
+            type="text"
+            id="phno"
+            placeholder="Password"
+          />
+          <i
+            class="fa fa-lock"
+            style="
+              position: relative;
+              top: 68px;
+              right: 136px;
+              font-size: 25px;
+              color: gray;
+            "
+          ></i>
         </div>
-          
+
         <a href="/basic_info" class="btn btn-next1">LOGIN</a>
-      
-        </form>
+      </form>
     </div>
-        <br><br><br><br><br>
+    <br /><br /><br /><br /><br />
 
-<footer class="footer">
-  <div class="footer-left col-md-4 col-sm-6">
- 
-    <h3 style="color:white;position:relative;left:20px;">Subscribe for newsletter</h3>
-      <div id="subscribe-footer">
-       
-      <i class='icon-chevron-right'></i>
-      <div id="right">
-      <form action="https://feedburner.google.com/fb/a/mailverify" method="post" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=techkshetra', 'popupwindow',  'scrollbars=yes,width=550,height=520');return true" target="popupwindow">
-      <input class="inptfld" name="email" placeholder=" Your Email" type="text">
-      <input name="uri" value="techkshetra" type="hidden">
-      <input name="loc" value="en_US" type="hidden">
-      <input class="subscribebtn" value="Subscribe Now!" type="submit">
-        </form>
+    <footer class="footer">
+      <div class="footer-left col-md-4 col-sm-6">
+        <h3 style="color: white; position: relative; left: 20px">
+          Subscribe for newsletter
+        </h3>
+        <div id="subscribe-footer">
+          <i class="icon-chevron-right"></i>
+          <div id="right">
+            <form
+              action="https://feedburner.google.com/fb/a/mailverify"
+              method="post"
+              onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=techkshetra', 'popupwindow',  'scrollbars=yes,width=550,height=520');return true"
+              target="popupwindow"
+            >
+              <input
+                class="inptfld"
+                name="email"
+                placeholder=" Your Email"
+                type="text"
+              />
+              <input name="uri" value="techkshetra" type="hidden" />
+              <input name="loc" value="en_US" type="hidden" />
+              <input
+                class="subscribebtn"
+                value="Subscribe Now!"
+                type="submit"
+              />
+            </form>
+          </div>
+        </div>
+        <br /><br /><br /><br /><br /><br />
+
+        <div class="icons">
+          <a href="https://www.facebook.com/CMRInstituteOfTechnologyBangalore/"
+            ><i class="fa fa-facebook" style="position: relative; top: 8px"></i
+          ></a>
+          <a href="https://twitter.com/CMRIT_Bengaluru"
+            ><i class="fa fa-twitter" style="position: relative; top: 8px"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/school/cmr-institute-of-technology-bengaluru/"
+            ><i class="fa fa-linkedin" style="position: relative; top: 8px"></i
+          ></a>
+          <a href="https://www.youtube.com/channel/UCpi96paEf16WS-Xf0_xyL9Q"
+            ><i
+              class="fa fa-youtube-play"
+              style="position: relative; top: 8px"
+            ></i
+          ></a>
+          <a href="https://www.instagram.com/cmrit.bangalore/"
+            ><i class="fa fa-instagram" style="position: relative; top: 8px"></i
+          ></a>
+        </div>
       </div>
-    </div>
-    <br><br><br><br><br><br>
-
-   
-    <div class="icons">
-      <a href="https://www.facebook.com/CMRInstituteOfTechnologyBangalore/"><i class="fa fa-facebook" style="position: relative;top:8px;"></i></a>
-      <a href="https://twitter.com/CMRIT_Bengaluru"><i class="fa fa-twitter" style="position: relative;top:8px;"></i></a>
-      <a href="https://www.linkedin.com/school/cmr-institute-of-technology-bengaluru/"><i class="fa fa-linkedin" style="position: relative;top:8px;"></i></a>
-      <a href="https://www.youtube.com/channel/UCpi96paEf16WS-Xf0_xyL9Q"><i class="fa fa-youtube-play" style="position: relative;top:8px;"></i></a>
-      <a href="https://www.instagram.com/cmrit.bangalore/"><i class="fa fa-instagram" style="position: relative;top:8px;"></i></a>
-    </div>
-  </div>
-  <div class="footer-center col-md-4 col-sm-6">
-    <div>
-      <i class="fa fa-map-marker"></i>
-      <p><span> CMR Institute of Technology,<br>132 AECS Layout,<br>ITPL Main Road, Kundalahalli<br>Bangalore 560037, India</span></p>
-    </div>
-    <br>
-    <div>
-      <i class="fa fa-phone"></i>
-      <p> (+91) 80 28524466 / 77</p>
-    </div>
-    <br>
-    <div>
-      <i class="fa fa-envelope"></i>
-      <p> info@cmrit.ac.in</p>
-    </div>
-  </div>
-  <div class="footer-right col-md-4 col-sm-6">
-    <img class="footer-img" src="{% static 'img/cmrit-white.png' %}">
-    <p class="menu" style="position: relative;bottom: 50px;right: 20px;">
-      <a href="#"> Home</a> 
-      <a href="#" > Admin</a> 
-      <a href="#" > Receptionist</a> 
-      <a href="#" > Apply now</a> 
-      <a href="#" > Contact Us</a> 
-      <a href="#"> FAQ</a>
-    </p>
-    
-  </div>
-  <footer style="color:lightgrey;background-color:#1a1a1a;height:8px;width: 1550px;text-align: center; font-family: sans-serif;font-size: 16px;padding:20px;position: relative;right:50px;bottom:10px;">Copyright © 2021 All Rights Reserved by CMRIT.</footer>
-</footer>
-
+      <div class="footer-center col-md-4 col-sm-6">
+        <div>
+          <i class="fa fa-map-marker"></i>
+          <p>
+            <span>
+              CMR Institute of Technology,<br />132 AECS Layout,<br />ITPL Main
+              Road, Kundalahalli<br />Bangalore 560037, India</span
+            >
+          </p>
+        </div>
+        <br />
+        <div>
+          <i class="fa fa-phone"></i>
+          <p>(+91) 80 28524466 / 77</p>
+        </div>
+        <br />
+        <div>
+          <i class="fa fa-envelope"></i>
+          <p>info@cmrit.ac.in</p>
+        </div>
+      </div>
+      <div class="footer-right col-md-4 col-sm-6">
+        <img class="footer-img" src="{% static 'img/cmrit-white.png' %}" />
+        <p class="menu" style="position: relative; bottom: 50px; right: 20px">
+          <a href="#"> Home</a>
+          <a href="#"> Admin</a>
+          <a href="#"> Receptionist</a>
+          <a href="#"> Apply now</a>
+          <a href="#"> Contact Us</a>
+          <a href="#"> FAQ</a>
+        </p>
+      </div>
+      <footer
+        style="
+          color: lightgrey;
+          background-color: #1a1a1a;
+          height: 8px;
+          width: 1550px;
+          text-align: center;
+          font-family: sans-serif;
+          font-size: 16px;
+          padding: 20px;
+          position: relative;
+          right: 50px;
+          bottom: 10px;
+        "
+      >
+        Copyright © 2021 All Rights Reserved by CMRIT.
+      </footer>
+    </footer>
   </body>
 </html>

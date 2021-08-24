@@ -128,9 +128,8 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-MEDIA_URL = 'D://Placement Detail//Resumes//'
+MEDIA_URL = "/Users/arpanabhishek/projects/ResumeAI/"
 
-MEDIA_ROOT = 'D://Placement Detail//Resumes//media/'
+MEDIA_ROOT = "/Users/arpanabhishek/projects/ResumeAI/media/"
 
 #C://django//resume//skillset.csv
-
